@@ -13,9 +13,9 @@ export default function Footer() {
         </p>
 
         <div className="flex gap-6 uppercase tracking-widest font-bold">
-          <a href="#" className="hover:text-white transition-colors">Privacy</a>
-          <a href="#" className="hover:text-white transition-colors">Terms</a>
-          <a href="#" className="hover:text-white transition-colors">Cookies</a>
+          <a href="#home" className="hover:text-white transition-colors">Home</a>
+          <a href="#about" className="hover:text-white transition-colors">About</a>
+          <a href="#contact" className="hover:text-white transition-colors">Contact</a>
         </div>
       </div>
     </footer>

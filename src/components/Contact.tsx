@@ -1,12 +1,20 @@
-import { motion } from 'motion/react';
-import { Mail, MessageCircle, Facebook, Twitter, Smartphone, Send } from 'lucide-react';
+import { useState, FormEvent } from 'react';
+import { motion, AnimatePresence } from 'motion/react';
+import { Mail, MessageCircle, Facebook, Twitter, Smartphone, Send, CheckCircle2 } from 'lucide-react';
 
 export default function Contact() {
+  const [submitted, setSubmitted] = useState(false);
   const socialLinks = [
     { name: 'Facebook', href: 'https://www.facebook.com/sheraz.khan.404470', icon: Facebook },
     { name: 'X (Twitter)', href: 'https://x.com/Sherazkhanoffic', icon: Twitter },
     { name: 'TikTok', href: 'https://www.tiktok.com/@sherazkhaninvotic', icon: Smartphone },
   ];
+
+  const handleSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    setSubmitted(true);
+    setTimeout(() => setSubmitted(false), 5000);
+  };
 
   return (
     <section id="contact" className="py-24 bg-black relative overflow-hidden">
@@ -71,38 +79,66 @@ export default function Contact() {
               </div>
             </div>
 
-            <div className="glass p-8 rounded-3xl border-white/10 flex flex-col justify-center">
-              <h3 className="text-2xl font-display font-bold mb-8">Quick Message</h3>
-              <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
-                <div>
-                  <input
-                    type="text"
-                    placeholder="Full Name"
-                    className="w-full bg-black/50 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-brand-red transition-colors"
-                  />
-                </div>
-                <div>
-                  <input
-                    type="email"
-                    placeholder="Email Address"
-                    className="w-full bg-black/50 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-brand-red transition-colors"
-                  />
-                </div>
-                <div>
-                  <textarea
-                    placeholder="Tell us about your channel..."
-                    rows={4}
-                    className="w-full bg-black/50 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-brand-red transition-colors resize-none"
-                  ></textarea>
-                </div>
-                <button
-                  type="submit"
-                  className="w-full bg-brand-red hover:bg-red-600 text-white font-bold py-3 rounded-md transition-all bg-glow-red flex items-center justify-center gap-2"
-                >
-                  Send Message
-                  <Send size={18} />
-                </button>
-              </form>
+            <div className="glass p-8 rounded-3xl border-white/10 flex flex-col justify-center min-h-[400px]">
+              <AnimatePresence mode="wait">
+                {!submitted ? (
+                  <motion.div
+                    key="form"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    className="flex flex-col h-full"
+                  >
+                    <h3 className="text-2xl font-display font-bold mb-8">Quick Message</h3>
+                    <form className="space-y-4" onSubmit={handleSubmit}>
+                      <div>
+                        <input
+                          type="text"
+                          required
+                          placeholder="Full Name"
+                          className="w-full bg-black/50 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-brand-red transition-colors"
+                        />
+                      </div>
+                      <div>
+                        <input
+                          type="email"
+                          required
+                          placeholder="Email Address"
+                          className="w-full bg-black/50 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-brand-red transition-colors"
+                        />
+                      </div>
+                      <div>
+                        <textarea
+                          required
+                          placeholder="Tell us about your channel..."
+                          rows={4}
+                          className="w-full bg-black/50 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-brand-red transition-colors resize-none"
+                        ></textarea>
+                      </div>
+                      <button
+                        type="submit"
+                        className="w-full bg-brand-red hover:bg-red-600 text-white font-bold py-3 rounded-md transition-all bg-glow-red flex items-center justify-center gap-2"
+                      >
+                        Send Message
+                        <Send size={18} />
+                      </button>
+                    </form>
+                  </motion.div>
+                ) : (
+                  <motion.div
+                    key="success"
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    className="flex flex-col items-center justify-center h-full text-center space-y-4 py-12"
+                  >
+                    <div className="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center text-green-500 mb-4">
+                      <CheckCircle2 size={40} />
+                    </div>
+                    <h3 className="text-3xl font-display font-bold">Message Sent!</h3>
+                    <p className="text-gray-400">Thank you for reaching out. Our team will contact you shortly.</p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
           </div>
         </motion.div>

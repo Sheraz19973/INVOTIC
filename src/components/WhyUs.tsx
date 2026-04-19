@@ -34,7 +34,9 @@ const stats = [
 
 export default function WhyUs() {
   return (
-    <section id="why-us" className="py-24 bg-brand-dark relative border-t border-white/5">
+    <section id="about" className="py-24 bg-brand-dark relative border-t border-white/5">
+      {/* Anchor for Why Us as well */}
+      <div id="why-us" className="absolute -top-24" />
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           <div className="lg:w-1/3">

@@ -3,7 +3,7 @@ import { ArrowRight, Play } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-brand-dark pt-20">
+    <section id="home" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-brand-dark pt-20">
       {/* Background Orbs */}
       <motion.div
         animate={{
@@ -69,10 +69,14 @@ export default function Hero() {
               Get My Channel Monetized
             </motion.a>
             <motion.a
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ 
+                scale: 1.05,
+                boxShadow: "0 0 20px rgba(0, 242, 255, 0.3)",
+                borderColor: "rgba(0, 242, 255, 0.5)"
+              }}
               whileTap={{ scale: 0.95 }}
               href="#services"
-              className="border border-white/10 hover:border-white/20 bg-transparent text-white px-8 py-3 rounded-md font-bold text-[0.85rem] transition-all flex items-center gap-2"
+              className="border border-white/10 bg-transparent text-white px-8 py-3 rounded-md font-bold text-[0.85rem] transition-all flex items-center gap-2"
             >
               Explore Our Services
             </motion.a>
