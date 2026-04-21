@@ -37,7 +37,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-2xl"
+          className="max-w-2xl lg:text-left text-center"
         >
           <motion.div
             initial={{ opacity: 0, x: -20 }}
@@ -46,20 +46,20 @@ export default function Hero() {
             className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-brand-red text-xs font-mono font-bold uppercase tracking-widest mb-6"
           >
             <span className="w-2 h-2 rounded-full bg-brand-red animate-pulse" />
-            Leading YouTube Automation Agency
+            Leading <span className="text-brand-red">YouTube</span> Automation Agency
           </motion.div>
 
           <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-display font-extrabold leading-[1.1] mb-6 tracking-tight">
             Welcome to <br />
-            <span className="text-brand-red">INVOTIC</span> <br />
-            Your YouTube <br /> Automation Agency
+            INVO<span className="text-brand-red">TIC</span> <br />
+            Your <span className="text-brand-red">YouTube</span> <br /> Automation Agency
           </h1>
 
-          <p className="text-lg md:text-xl text-gray-400 mb-8 leading-relaxed font-normal max-w-lg">
+          <p className="text-lg md:text-xl text-gray-400 mb-8 leading-relaxed font-normal max-w-lg lg:mx-0 mx-auto">
             Transforming struggling channels into revenue machines. Whether it's monetization, policy strikes, or full automation—we fix it all.
           </p>
 
-          <div className="flex flex-wrap gap-4">
+          <div className="flex flex-wrap gap-4 lg:justify-start justify-center">
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -82,16 +82,16 @@ export default function Hero() {
             </motion.a>
           </div>
 
-          <div className="mt-16 flex items-center gap-12 border-t border-white/5 pt-8 max-w-lg">
-            <div className="text-center border-r border-white/5 pr-8">
+          <div className="mt-16 grid grid-cols-2 sm:flex sm:items-center gap-6 sm:gap-12 border-t border-white/5 pt-8 max-w-lg lg:mx-0 mx-auto">
+            <div className="text-center sm:border-r border-white/5 sm:pr-8">
               <p className="text-xl font-bold text-white">8+</p>
               <p className="text-[0.65rem] font-bold text-gray-400 uppercase tracking-widest">Years Exp</p>
             </div>
-            <div className="text-center border-r border-white/5 pr-8">
+            <div className="text-center sm:border-r border-white/5 sm:pr-8">
               <p className="text-xl font-bold text-white">2016</p>
               <p className="text-[0.65rem] font-bold text-gray-400 uppercase tracking-widest">Started</p>
             </div>
-            <div className="text-center border-r border-white/5 pr-8">
+            <div className="text-center sm:border-r border-white/5 sm:pr-8">
               <p className="text-xl font-bold text-white">500+</p>
               <p className="text-[0.65rem] font-bold text-gray-400 uppercase tracking-widest">Channels</p>
             </div>
@@ -105,22 +105,23 @@ export default function Hero() {
         {/* Right Side: Visual Element */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
           transition={{ duration: 1, ease: "easeOut" }}
-          className="relative lg:block hidden"
+          className="relative lg:block"
         >
-          <div className="relative w-full aspect-square max-w-lg mx-auto">
+          <div className="relative w-full aspect-square max-w-[300px] sm:max-w-md lg:max-w-lg mx-auto">
             {/* Central Visual: High-Quality Service Image */}
             <motion.div
               animate={{
                 y: [0, -15, 0],
               }}
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] overflow-hidden rounded-[3rem] border border-white/10 shadow-[0_0_50px_rgba(255,0,0,0.2)]"
+              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] lg:w-[400px] lg:h-[400px] overflow-hidden rounded-[2rem] sm:rounded-[3rem] border border-white/10 shadow-[0_0_50px_rgba(255,0,0,0.2)] bg-brand-surface"
             >
               <img 
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800" 
-                alt="YouTube Automation Dashboard" 
+                src="profile.jpg" 
+                alt="Sheraz Khan - YouTube Automation Expert & Founder" 
                 className="w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-brand-red/20 to-transparent mix-blend-overlay" />
@@ -128,8 +129,8 @@ export default function Hero() {
               
               {/* Central Play Button Overlay */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-20 h-20 bg-brand-red/90 rounded-full flex items-center justify-center bg-glow-red animate-pulse">
-                  <Play className="text-white w-8 h-8 fill-white ml-1" />
+                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-brand-red/90 rounded-full flex items-center justify-center bg-glow-red animate-pulse">
+                  <Play className="text-white w-6 h-6 sm:w-8 sm:h-8 fill-white ml-1" />
                 </div>
               </div>
             </motion.div>

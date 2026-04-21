@@ -3,7 +3,7 @@ import { Shield, FileVideo, Users, Target, ShoppingBag, ArrowRight } from 'lucid
 
 const services = [
   {
-    title: "YouTube Channel Recovery",
+    title: <><span className="text-brand-red">YouTube</span> Channel Recovery</>,
     description: "Fix policy strikes, unauthentic content issues, reuse material warnings, and demonetization problems instantly.",
     icon: Shield,
     color: "brand-red",
@@ -16,7 +16,7 @@ const services = [
   },
   {
     title: "Full Channel Management",
-    description: "Complete hands-off YouTube automation. We handle everything from idea to upload and optimization.",
+    description: <>Complete hands-off <span className="text-brand-red">YouTube</span> automation. We handle everything from idea to upload and optimization.</>,
     icon: Users,
     color: "brand-red",
   },
@@ -57,7 +57,7 @@ export default function Services() {
             transition={{ delay: 0.1 }}
             className="text-4xl md:text-6xl font-display font-bold tracking-tighter"
           >
-            Everything You Need <br /> To <span className="text-brand-red">Own YouTube</span>
+            Everything You Need <br /> To Own <span className="text-brand-red">YouTube</span>
           </motion.h2>
         </div>
 

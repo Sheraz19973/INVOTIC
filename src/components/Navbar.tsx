@@ -1,10 +1,14 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Menu, X, ArrowRight } from 'lucide-react';
+import { Link, useLocation } from 'react-router-dom';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const location = useLocation();
+
+  const isAdmissionPage = location.pathname === '/admission';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -30,25 +34,31 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 flex items-center justify-between">
         {/* Logo */}
-        <a href="#home" className="flex items-center gap-2 group">
+        <Link to="/" className="flex items-center gap-2 group">
           <span className="text-2xl font-display font-extrabold tracking-tighter">
             INVO<span className="text-brand-red">TIC</span>
           </span>
-        </a>
+        </Link>
 
         {/* Desktop Menu */}
         <div className="hidden md:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.name}
-              href={link.href}
+              href={isAdmissionPage ? `/${link.href}` : link.href}
               className="text-sm font-medium text-gray-400 hover:text-white transition-colors tracking-wide uppercase"
             >
               {link.name}
             </a>
           ))}
+          <Link
+            to="/admission"
+            className="text-sm font-bold text-brand-cyan hover:text-white transition-colors tracking-wide uppercase"
+          >
+            Admission
+          </Link>
           <a
-            href="#contact"
+            href={isAdmissionPage ? "/#contact" : "#contact"}
             className="bg-brand-red hover:bg-red-600 text-white px-8 py-3 rounded-md text-sm font-semibold transition-all hover:scale-105 bg-glow-red flex items-center gap-2"
           >
             Get Started
@@ -92,15 +102,22 @@ export default function Navbar() {
                 {navLinks.map((link) => (
                   <a
                     key={link.name}
-                    href={link.href}
+                    href={isAdmissionPage ? `/${link.href}` : link.href}
                     onClick={() => setIsOpen(false)}
                     className="text-2xl font-display font-bold text-gray-300 hover:text-brand-red transition-colors"
                   >
                     {link.name}
                   </a>
                 ))}
+                <Link
+                  to="/admission"
+                  onClick={() => setIsOpen(false)}
+                  className="text-2xl font-display font-bold text-brand-cyan hover:text-white transition-colors"
+                >
+                  Admission
+                </Link>
                 <a
-                  href="#contact"
+                  href={isAdmissionPage ? "/#contact" : "#contact"}
                   onClick={() => setIsOpen(false)}
                   className="mt-4 bg-brand-red text-white py-4 rounded-xl text-center font-bold text-lg hover:bg-glow-red transition-all"
                 >

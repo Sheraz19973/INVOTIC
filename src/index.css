@@ -17,7 +17,7 @@
 
 @layer base {
   body {
-    @apply bg-brand-dark text-white font-sans antialiased selection:bg-brand-red selection:text-white;
+    @apply bg-brand-dark text-white font-sans font-bold antialiased selection:bg-brand-red selection:text-white;
   }
 }
 

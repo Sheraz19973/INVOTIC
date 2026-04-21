@@ -1,5 +1,6 @@
 import { motion } from 'motion/react';
 import { CheckCircle2, Zap, Trophy, ExternalLink } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 export default function Training() {
   return (
@@ -17,17 +18,18 @@ export default function Training() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
+            className="lg:text-left text-center"
           >
             <div className="inline-block px-4 py-1.5 rounded-full bg-brand-cyan/20 border border-brand-cyan/30 text-brand-cyan text-xs font-bold uppercase tracking-widest mb-6">
               Exclusive Training Program
             </div>
             <h2 className="text-4xl md:text-6xl font-display font-bold tracking-tighter mb-6 leading-tight">
-              Learn YouTube <br />
+              Learn <span className="text-brand-red">YouTube</span> <br />
               <span className="text-brand-red">Automation</span> with <br />
-              INVOTIC
+              INVO<span className="text-brand-red">TIC</span>
             </h2>
-            <p className="text-xl text-gray-400 mb-8 leading-relaxed font-light">
-              Master YouTube Automation from beginner to advanced level. We offer both Free and Paid training programs based on 6+ years of real experience.
+            <p className="text-lg md:text-xl text-gray-400 mb-8 leading-relaxed font-light lg:mx-0 mx-auto max-w-xl">
+              Master <span className="text-brand-red">YouTube</span> Automation from beginner to advanced level. We offer both Free and Paid training programs based on 6+ years of real experience.
             </p>
 
             <div className="space-y-6 mb-10">
@@ -52,17 +54,13 @@ export default function Training() {
               </div>
             </div>
 
-            <motion.a
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              href="https://partnerunityx.com/"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Link
+              to="/admission"
               className="inline-flex items-center gap-3 bg-brand-red hover:bg-red-600 text-white px-10 py-4 rounded-md font-bold text-lg transition-all shadow-xl shadow-brand-red/10 group"
             >
               Register Now
               <ExternalLink size={20} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-            </motion.a>
+            </Link>
           </motion.div>
 
           <motion.div
@@ -72,9 +70,9 @@ export default function Training() {
             transition={{ duration: 1 }}
             className="relative"
           >
-            <div className="relative z-10 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] aspect-[4/5]">
+            <div className="relative z-10 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] aspect-[4/5] bg-brand-surface">
               <img
-                src="https://images.unsplash.com/photo-1449824913935-59a10b8d2000?auto=format&fit=crop&q=80&w=800&h=1000"
+                src="profile.jpg"
                 alt="Sheraz Khan Training"
                 className="w-full h-full object-cover"
               />

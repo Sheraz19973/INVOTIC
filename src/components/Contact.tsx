@@ -38,7 +38,7 @@ export default function Contact() {
                 <span className="text-brand-red">Automate</span> Your Channel?
               </h2>
               <p className="text-xl text-gray-400 mb-10 leading-relaxed font-light">
-                Our experts are ready to take your channel to the next level. Let's discuss your project and start your journey to YouTube success today.
+                Our experts are ready to take your channel to the next level. Let's discuss your project and start your journey to <span className="text-brand-red">YouTube</span> success today.
               </p>
 
               <div className="space-y-6 mb-12">

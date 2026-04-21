@@ -12,7 +12,7 @@ const stats = [
   {
     icon: Youtube,
     title: "Expert Since 2016",
-    label: "YouTube Ecosystem",
+    label: <><span className="text-brand-red">YouTube</span> Ecosystem</>,
     description: "Witnessed and adapted to every major algorithm change in the last decade.",
     color: "brand-cyan"
   },
@@ -44,17 +44,14 @@ export default function WhyUs() {
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="relative aspect-square rounded-[3rem] overflow-hidden border border-white/10"
+              className="relative aspect-square rounded-[3rem] overflow-hidden border border-white/10 group"
             >
               <img
-                src="/sheraz-khan.jpg"
+                src="profile.jpg"
                 alt="Sheraz Khan Experience"
                 className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
-                onError={(e) => {
-                  e.currentTarget.src = "https://picsum.photos/seed/experience/600/600";
-                }}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-brand-red/40 to-transparent mix-blend-multiply opacity-50" />
+              <div className="absolute inset-0 bg-gradient-to-t from-brand-red/40 to-transparent mix-blend-multiply opacity-50 group-hover:opacity-0 transition-opacity duration-700" />
             </motion.div>
           </div>
 
@@ -63,12 +60,12 @@ export default function WhyUs() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className="mb-12"
+              className="mb-12 lg:text-left text-center"
             >
               <h2 className="text-4xl md:text-5xl font-display font-bold mb-6 tracking-tighter">
-                Why Industry Leaders <span className="text-brand-red">Trust INVOTIC</span>
+                Why Industry Leaders Trust INVO<span className="text-brand-red">TIC</span>
               </h2>
-              <p className="text-lg text-gray-400 max-w-2xl leading-relaxed">
+              <p className="text-lg text-gray-400 max-w-2xl leading-relaxed lg:mx-0 mx-auto">
                 We don't just teach automation; we live it. Our founder Sheraz Khan has been at the forefront of digital monetization since 2016, building a legacy of restored channels and scaled businesses.
               </p>
             </motion.div>
