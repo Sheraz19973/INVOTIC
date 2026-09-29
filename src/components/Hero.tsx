@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowRight, Play } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -126,13 +126,6 @@ export default function Hero() {
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-brand-red/20 to-transparent mix-blend-overlay" />
               <div className="absolute inset-0 bg-black/20" />
-              
-              {/* Central Play Button Overlay */}
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-brand-red/90 rounded-full flex items-center justify-center bg-glow-red animate-pulse">
-                  <Play className="text-white w-6 h-6 sm:w-8 sm:h-8 fill-white ml-1" />
-                </div>
-              </div>
             </motion.div>
 
             {/* Floating Cards / Decorations */}

@@ -1,5 +1,5 @@
 import { motion } from 'motion/react';
-import { ArrowLeft, Send, ClipboardCheck } from 'lucide-react';
+import { ArrowLeft, ClipboardCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export default function AdmissionForm() {
@@ -46,7 +46,7 @@ export default function AdmissionForm() {
 
             <div className="grid md:grid-cols-3 gap-6 text-left mb-12">
               <div className="bg-white/5 border border-white/10 p-6 rounded-2xl">
-                <div className="text-brand-cyan mb-3"><Send size={24} /></div>
+                <div className="text-brand-cyan mb-3 font-bold text-xl">01</div>
                 <h4 className="font-bold mb-1">Apply</h4>
                 <p className="text-xs text-gray-400">Submit your details via the official form.</p>
               </div>

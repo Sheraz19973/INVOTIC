@@ -1,38 +1,50 @@
 import { motion } from 'motion/react';
 import { Shield, FileVideo, Users, Target, ShoppingBag, ArrowRight } from 'lucide-react';
 
+const whatsappNumber = '923484166937';
+
 const services = [
   {
     title: <><span className="text-brand-red">YouTube</span> Channel Recovery</>,
+    plainTitle: 'YouTube Channel Recovery',
     description: "Fix policy strikes, inauthentic content issues, reused material warnings, and demonetization problems instantly.",
     icon: Shield,
     color: "brand-red",
   },
   {
     title: "Professional Content",
+    plainTitle: 'Professional Content',
     description: "High-end video editing, viral thumbnail design, script writing, and precision prompt engineering.",
     icon: FileVideo,
     color: "brand-cyan",
   },
   {
     title: "Full Channel Management",
+    plainTitle: 'Full Channel Management',
     description: <>Complete hands-off <span className="text-brand-red">YouTube</span> automation. We handle everything from idea to upload and optimization.</>,
     icon: Users,
     color: "brand-red",
   },
   {
     title: "Client Hunting & Leads",
+    plainTitle: 'Client Hunting & Leads',
     description: "Strategic lead generation and client hunting services for any business niche or service provider.",
     icon: Target,
     color: "brand-cyan",
   },
   {
     title: "Amazon Dropshipping",
+    plainTitle: 'Amazon Dropshipping',
     description: "Expert product hunting support and dropshipping management to scale your Amazon business.",
     icon: ShoppingBag,
     color: "brand-red",
   },
 ];
+
+const serviceWhatsAppUrl = (plainTitle: string) =>
+  `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
+    `Hi INVOTIC! I'm interested in your ${plainTitle} service. Please share the details.`
+  )}`;
 
 export default function Services() {
   return (
@@ -85,9 +97,15 @@ export default function Services() {
                   {service.description}
                 </p>
 
-                <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white/40 group-hover:text-white transition-all">
+                <a
+                  href={serviceWhatsAppUrl(service.plainTitle)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Ask about ${service.plainTitle} on WhatsApp`}
+                  className="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-widest text-white/40 group-hover:text-white transition-all"
+                >
                   Learn More <ArrowRight size={16} className="group-hover:translate-x-2 transition-transform" />
-                </div>
+                </a>
               </div>
 
               {/* Decorative Corner Glow */}

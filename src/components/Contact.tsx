@@ -3,17 +3,30 @@ import { motion, AnimatePresence } from 'motion/react';
 import { Mail, MessageCircle, Facebook, Twitter, Smartphone, Send, CheckCircle2 } from 'lucide-react';
 
 export default function Contact() {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
+  const whatsappNumber = '923484166937';
   const socialLinks = [
     { name: 'Facebook', href: 'https://www.facebook.com/sheraz.khan.404470', icon: Facebook },
     { name: 'X (Twitter)', href: 'https://x.com/Sherazkhanoffic', icon: Twitter },
     { name: 'TikTok', href: 'https://www.tiktok.com/@sherazkhaninvotic', icon: Smartphone },
   ];
 
+  const buildWhatsAppUrl = () => {
+    const text =
+      `Hi INVOTIC!\n\n` +
+      `Name: ${name}\n` +
+      `Email: ${email}\n\n` +
+      `Message:\n${message}`;
+    return `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(text)}`;
+  };
+
   const handleSubmit = (e: FormEvent) => {
     e.preventDefault();
+    window.open(buildWhatsAppUrl(), '_blank', 'noopener,noreferrer');
     setSubmitted(true);
-    setTimeout(() => setSubmitted(false), 5000);
   };
 
   return (
@@ -96,6 +109,8 @@ export default function Contact() {
                           type="text"
                           required
                           placeholder="Full Name"
+                          value={name}
+                          onChange={(e) => setName(e.target.value)}
                           className="w-full bg-black/50 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-brand-red transition-colors"
                         />
                       </div>
@@ -104,6 +119,8 @@ export default function Contact() {
                           type="email"
                           required
                           placeholder="Email Address"
+                          value={email}
+                          onChange={(e) => setEmail(e.target.value)}
                           className="w-full bg-black/50 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-brand-red transition-colors"
                         />
                       </div>
@@ -112,6 +129,8 @@ export default function Contact() {
                           required
                           placeholder="Tell us about your channel..."
                           rows={4}
+                          value={message}
+                          onChange={(e) => setMessage(e.target.value)}
                           className="w-full bg-black/50 border border-white/10 rounded-xl px-6 py-4 focus:outline-none focus:border-brand-red transition-colors resize-none"
                         ></textarea>
                       </div>
@@ -119,9 +138,12 @@ export default function Contact() {
                         type="submit"
                         className="w-full bg-brand-red hover:bg-red-600 text-white font-bold py-3 rounded-md transition-all bg-glow-red flex items-center justify-center gap-2"
                       >
-                        Send Message
+                        Send via WhatsApp
                         <Send size={18} />
                       </button>
+                      <p className="text-xs text-gray-500 text-center">
+                        This opens WhatsApp with your message ready — just press send.
+                      </p>
                     </form>
                   </motion.div>
                 ) : (
@@ -134,8 +156,27 @@ export default function Contact() {
                     <div className="w-16 h-16 rounded-full bg-green-500/20 flex items-center justify-center text-green-500 mb-4">
                       <CheckCircle2 size={40} />
                     </div>
-                    <h3 className="text-3xl font-display font-bold">Message Sent!</h3>
-                    <p className="text-gray-400">Thank you for reaching out. Our team will contact you shortly.</p>
+                    <h3 className="text-3xl font-display font-bold">Opening WhatsApp…</h3>
+                    <p className="text-gray-400">Your message is ready in WhatsApp — just press send and our team will get back to you.</p>
+                    <a
+                      href={buildWhatsAppUrl()}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-brand-red font-bold underline underline-offset-4 hover:text-red-400 transition-colors"
+                    >
+                      WhatsApp didn't open? Tap here to send.
+                    </a>
+                    <button
+                      onClick={() => {
+                        setSubmitted(false);
+                        setName('');
+                        setEmail('');
+                        setMessage('');
+                      }}
+                      className="text-sm text-gray-500 hover:text-white transition-colors underline underline-offset-4"
+                    >
+                      Send another message
+                    </button>
                   </motion.div>
                 )}
               </AnimatePresence>
