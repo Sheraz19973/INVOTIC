@@ -4,7 +4,7 @@ import { Shield, FileVideo, Users, Target, ShoppingBag, ArrowRight } from 'lucid
 const services = [
   {
     title: <><span className="text-brand-red">YouTube</span> Channel Recovery</>,
-    description: "Fix policy strikes, unauthentic content issues, reuse material warnings, and demonetization problems instantly.",
+    description: "Fix policy strikes, inauthentic content issues, reused material warnings, and demonetization problems instantly.",
     icon: Shield,
     color: "brand-red",
   },
@@ -64,7 +64,7 @@ export default function Services() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((service, index) => (
             <motion.div
-              key={service.title}
+              key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}

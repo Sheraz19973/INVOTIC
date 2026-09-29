@@ -84,7 +84,7 @@ export default function Hero() {
 
           <div className="mt-16 grid grid-cols-2 sm:flex sm:items-center gap-6 sm:gap-12 border-t border-white/5 pt-8 max-w-lg lg:mx-0 mx-auto">
             <div className="text-center sm:border-r border-white/5 sm:pr-8">
-              <p className="text-xl font-bold text-white">8+</p>
+              <p className="text-xl font-bold text-white">10+</p>
               <p className="text-[0.65rem] font-bold text-gray-400 uppercase tracking-widest">Years Exp</p>
             </div>
             <div className="text-center sm:border-r border-white/5 sm:pr-8">

@@ -29,7 +29,7 @@ export default function Training() {
               INVO<span className="text-brand-red">TIC</span>
             </h2>
             <p className="text-lg md:text-xl text-gray-400 mb-8 leading-relaxed font-light lg:mx-0 mx-auto max-w-xl">
-              Master <span className="text-brand-red">YouTube</span> Automation from beginner to advanced level. We offer both Free and Paid training programs based on 6+ years of real experience.
+              Master <span className="text-brand-red">YouTube</span> Automation from beginner to advanced level. We offer both Free and Paid training programs based on 10+ years of real experience.
             </p>
 
             <div className="space-y-6 mb-10">
@@ -96,7 +96,7 @@ export default function Training() {
               {/* Top Left Badge */}
               <div className="absolute top-8 left-8 bg-brand-dark/80 backdrop-blur-xl border border-white/10 p-5 rounded-2xl min-w-[140px] shadow-2xl">
                 <div className="text-4xl font-display font-black text-brand-cyan mb-1 flex items-baseline">
-                  6<span className="text-2xl">+</span>
+                  10<span className="text-2xl">+</span>
                 </div>
                 <div className="text-[10px] font-extrabold uppercase tracking-widest text-gray-400 leading-tight">Years Industry <br /> Experience</div>
               </div>

@@ -4,7 +4,7 @@ import { Target, Youtube, ShoppingCart, ShieldCheck } from 'lucide-react';
 const stats = [
   {
     icon: Target,
-    title: "8+ Years",
+    title: "10+ Years",
     label: "Client Hunting Experience",
     description: "Deep expertise in finding and closing high-ticket clients globally.",
     color: "brand-red"
@@ -73,7 +73,7 @@ export default function WhyUs() {
             <div className="grid sm:grid-cols-2 gap-8">
               {stats.map((stat, index) => (
                 <motion.div
-                  key={stat.label}
+                  key={index}
                   initial={{ opacity: 0, x: 20 }}
                   whileInView={{ opacity: 1, x: 0 }}
                   viewport={{ once: true }}
