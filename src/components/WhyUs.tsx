@@ -49,7 +49,7 @@ export default function WhyUs() {
               <img
                 src="profile.jpg"
                 alt="Sheraz Khan Experience"
-                className="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-brand-red/40 to-transparent mix-blend-multiply opacity-50 group-hover:opacity-0 transition-opacity duration-700" />
             </motion.div>
