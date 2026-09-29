@@ -17,6 +17,7 @@ export default function Footer() {
           <a href="/#about" className="hover:text-white transition-colors">About</a>
           <a href="/#contact" className="hover:text-white transition-colors">Contact</a>
           <a href="/admission" className="hover:text-white transition-colors">Admission</a>
+          <a href="/blog" className="hover:text-white transition-colors">Blog</a>
         </div>
       </div>
     </footer>

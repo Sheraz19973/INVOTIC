@@ -8,7 +8,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
 
-  const isAdmissionPage = location.pathname === '/admission';
+  const isSubPage = location.pathname !== '/';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -45,7 +45,7 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <a
               key={link.name}
-              href={isAdmissionPage ? `/${link.href}` : link.href}
+              href={isSubPage ? `/${link.href}` : link.href}
               className="text-sm font-medium text-gray-400 hover:text-white transition-colors tracking-wide uppercase"
             >
               {link.name}
@@ -57,8 +57,14 @@ export default function Navbar() {
           >
             Admission
           </Link>
+          <Link
+            to="/blog"
+            className="text-sm font-medium text-gray-400 hover:text-white transition-colors tracking-wide uppercase"
+          >
+            Blog
+          </Link>
           <a
-            href={isAdmissionPage ? "/#contact" : "#contact"}
+            href={isSubPage ? "/#contact" : "#contact"}
             className="bg-brand-red hover:bg-red-600 text-white px-8 py-3 rounded-md text-sm font-semibold transition-all hover:scale-105 bg-glow-red flex items-center gap-2"
           >
             Get Started
@@ -102,7 +108,7 @@ export default function Navbar() {
                 {navLinks.map((link) => (
                   <a
                     key={link.name}
-                    href={isAdmissionPage ? `/${link.href}` : link.href}
+                    href={isSubPage ? `/${link.href}` : link.href}
                     onClick={() => setIsOpen(false)}
                     className="text-2xl font-display font-bold text-gray-300 hover:text-brand-red transition-colors"
                   >
@@ -116,8 +122,15 @@ export default function Navbar() {
                 >
                   Admission
                 </Link>
+                <Link
+                  to="/blog"
+                  onClick={() => setIsOpen(false)}
+                  className="text-2xl font-display font-bold text-gray-300 hover:text-brand-red transition-colors"
+                >
+                  Blog
+                </Link>
                 <a
-                  href={isAdmissionPage ? "/#contact" : "#contact"}
+                  href={isSubPage ? "/#contact" : "#contact"}
                   onClick={() => setIsOpen(false)}
                   className="mt-4 bg-brand-red text-white py-4 rounded-xl text-center font-bold text-lg hover:bg-glow-red transition-all"
                 >
