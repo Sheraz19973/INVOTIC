@@ -122,7 +122,7 @@ export default function Hero() {
               <img 
                 src="profile.jpg" 
                 alt="Sheraz Khan - YouTube Automation Expert & Founder" 
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-brand-red/20 to-transparent mix-blend-overlay" />
               <div className="absolute inset-0 bg-black/20" />
