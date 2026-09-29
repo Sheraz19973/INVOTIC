@@ -74,7 +74,7 @@ export default function Training() {
               <img
                 src="profile.jpg"
                 alt="Sheraz Khan Training"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-top"
               />
               {/* Overlay Content */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-10">
