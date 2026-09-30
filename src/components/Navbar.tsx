@@ -63,6 +63,12 @@ export default function Navbar() {
           >
             Blog
           </Link>
+          <Link
+            to="/tools"
+            className="text-sm font-medium text-gray-400 hover:text-white transition-colors tracking-wide uppercase"
+          >
+            Tools
+          </Link>
           <a
             href={isSubPage ? "/#contact" : "#contact"}
             className="bg-brand-red hover:bg-red-600 text-white px-8 py-3 rounded-md text-sm font-semibold transition-all hover:scale-105 bg-glow-red flex items-center gap-2"
@@ -128,6 +134,13 @@ export default function Navbar() {
                   className="text-2xl font-display font-bold text-gray-300 hover:text-brand-red transition-colors"
                 >
                   Blog
+                </Link>
+                <Link
+                  to="/tools"
+                  onClick={() => setIsOpen(false)}
+                  className="text-2xl font-display font-bold text-gray-300 hover:text-brand-red transition-colors"
+                >
+                  Tools
                 </Link>
                 <a
                   href={isSubPage ? "/#contact" : "#contact"}

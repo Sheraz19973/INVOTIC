@@ -10,6 +10,8 @@ import Footer from './components/Footer';
 import AdmissionForm from './components/AdmissionForm';
 import Blog from './components/Blog';
 import BlogPost from './components/BlogPost';
+import Tools from './components/Tools';
+import ToolPage from './components/ToolPage';
 
 function HomePage() {
   return (
@@ -44,6 +46,8 @@ export default function App() {
             <Route path="/admission" element={<AdmissionForm />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/tools" element={<Tools />} />
+            <Route path="/tools/:slug" element={<ToolPage />} />
           </Routes>
         </main>
         <Footer />
