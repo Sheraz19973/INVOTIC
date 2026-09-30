@@ -11,6 +11,8 @@ export type ContentBlock =
   | { type: 'quote'; text: string; author?: string }
   | { type: 'callout'; title: string; text: string }
   | { type: 'faq'; items: { q: string; a: string }[] }
+  | { type: 'toolLink'; title: string; text: string; href: string; buttonText: string }
+  | { type: 'image'; src: string; alt: string; caption?: string }
   | { type: 'cta' };
 
 export interface BlogPost {
@@ -325,6 +327,168 @@ export const posts: BlogPost[] = [
           {
             q: 'Is YouTube automation still profitable in 2026?',
             a: 'Yes, but the bar is higher than it was years ago. Low-effort content gets filtered by policy and the algorithm alike. Channels with real systems \u2014 niche research, script quality control, retention analysis \u2014 still build profitable businesses.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'urdu-to-english-voice-translator-chrome-extension',
+    title: 'Speak Urdu, Get English: Free Urdu-to-English Voice Translator Chrome Extension',
+    metaDescription:
+      'Speak or type in Urdu or Roman Urdu and get instant English translations without leaving the page. Free Chrome extension with setup guide, features, and FAQs.',
+    excerpt:
+      'Your spoken Urdu is fluent but typing English slows you down? This free Chrome extension translates your Urdu voice or Roman Urdu typing into English right on the page you are working on.',
+    category: 'AI Tools',
+    tags: [
+      'urdu to english translator',
+      'urdu voice translator',
+      'roman urdu to english',
+      'chrome extension',
+      'ai translator',
+    ],
+    date: '2026-09-30',
+    readTime: 7,
+    keyword: 'urdu to english voice translator chrome extension',
+    content: [
+      {
+        type: 'intro',
+        text: 'Millions of Pakistanis think fluently in Urdu but get stuck the moment they have to write in English. An email to a client, a job application form, a reply in a support chat \u2014 every one of them means opening Google Translate in another tab, typing, copying, switching back, and pasting. It works, but it breaks your flow a dozen times a day. Speak & Translate, a free Chrome extension from INVOTIC, removes that friction: you speak or type in Urdu (or Roman Urdu), and it gives you English right there on the page you are already using.',
+      },
+      {
+        type: 'image',
+        src: '/blog/speak-translate-visual.svg',
+        alt: 'Speak & Translate: speak or type in Urdu and get polished English instantly — free Chrome extension by Sheraz Khan, INVOTIC',
+        caption: 'Speak & Translate — built by Sheraz Khan, founder of INVOTIC.',
+      },
+      {
+        type: 'h2',
+        text: 'What is Speak & Translate?',
+      },
+      {
+        type: 'p',
+        text: 'Speak & Translate is a free Chrome extension built by Sheraz Khan, founder of INVOTIC, that lives in your browser\u2019s side panel. It takes Urdu voice input or typed Urdu/Roman Urdu text, translates it into English using Google\u2019s Gemini AI, and lets you insert the translated text directly into the website you are working on \u2014 a form field, a chat box, an email draft, a document. You never switch tabs.',
+      },
+      {
+        type: 'ul',
+        items: [
+          'Voice input: speak in Urdu, get English text back.',
+          'Roman Urdu support: type the way you normally text (e.g. "mujhe ye email likhna hai") and get a proper English version.',
+          'Side panel on any website: it stays open while you browse, fill forms, or chat.',
+          'One-click insert: drop the translated English straight into the page field you are using.',
+          'Powered by Gemini: translations come from Google\u2019s AI model, not a fixed phrasebook.',
+        ],
+      },
+      {
+        type: 'h2',
+        text: 'Who is it actually for?',
+      },
+      {
+        type: 'p',
+        text: 'If any of these sound familiar, this tool was built for you:',
+      },
+      {
+        type: 'ul',
+        items: [
+          'Freelancers replying to international clients on Upwork, Fiverr, or WhatsApp.',
+          'Students writing assignments, emails to teachers, or scholarship applications.',
+          'Job seekers filling out online application forms in English.',
+          'Shop owners and support agents answering customer messages in English.',
+          'Anyone whose spoken English is fine but whose written English is slow.',
+        ],
+      },
+      {
+        type: 'h2',
+        text: 'How to install and set it up (4 steps)',
+      },
+      {
+        type: 'p',
+        text: 'Setup takes about five minutes. The full illustrated guide is on the tool page \u2014 here is the short version:',
+      },
+      {
+        type: 'ol',
+        items: [
+          'Download the free extension ZIP from the Speak & Translate tool page and extract it.',
+          'Open chrome://extensions, enable Developer Mode, and click "Load unpacked", then select the extracted folder.',
+          'Get a free Gemini API key from Google AI Studio (aistudio.google.com) and paste it into the extension when it asks.',
+          'Open the extension\u2019s side panel on any website, allow microphone access, and start speaking or typing.',
+        ],
+      },
+      {
+        type: 'toolLink',
+        title: 'Get Speak & Translate free',
+        text: 'Download the extension and follow the step-by-step setup guide with screenshots.',
+        href: '/tools/speak-translate',
+        buttonText: 'Open the free download page',
+      },
+      {
+        type: 'h2',
+        text: 'Why not just use Google Translate?',
+      },
+      {
+        type: 'p',
+        text: 'Google Translate is fine for a quick word lookup, but it was not designed for the way people actually work. Every translation means a tab switch, a copy, and a paste \u2014 and its voice typing still leaves you to fix and move the text yourself. Speak & Translate is built around a different idea: the translation happens where the writing happens. You speak, you get English, you insert it into the form or chat in front of you. For Roman Urdu especially \u2014 the way most Pakistanis actually type \u2014 having a dedicated tool that understands "mujhe kal meeting ke liye email chahiye" and returns polished English is a genuine time-saver.',
+      },
+      {
+        type: 'h2',
+        text: 'What you need (and what it costs)',
+      },
+      {
+        type: 'ul',
+        items: [
+          'The extension itself: free, downloaded from INVOTIC.',
+          'A Gemini API key: free from Google AI Studio \u2014 you create it with your Google account in a minute.',
+          'Google Chrome or Microsoft Edge (any Chromium browser works).',
+          'A microphone, if you want to use voice input instead of typing.',
+        ],
+      },
+      {
+        type: 'p',
+        text: 'There is no subscription and no INVOTIC account. The translation runs on your own free Gemini API key, which you paste into the extension yourself in your own browser.',
+      },
+      {
+        type: 'h2',
+        text: 'Practical tips for better translations',
+      },
+      {
+        type: 'ul',
+        items: [
+          'Speak in short, complete sentences \u2014 you will get cleaner English than from one long rambling paragraph.',
+          'In Roman Urdu, write the way you text friends; the AI handles casual phrasing well.',
+          'Always give the English one quick read before sending, especially for formal emails.',
+          'Use a stable internet connection, since translation runs on Google\u2019s online AI model.',
+        ],
+      },
+      {
+        type: 'h2',
+        text: 'Frequently asked questions',
+      },
+      {
+        type: 'faq',
+        items: [
+          {
+            q: 'Is Speak & Translate really free?',
+            a: 'Yes. The extension is a free download from INVOTIC, and the Gemini API key it uses has a free tier from Google AI Studio. There is no paid plan and no account to create.',
+          },
+          {
+            q: 'Does it support Roman Urdu?',
+            a: 'Yes. You can type in Roman Urdu (Urdu written in English letters, the way most people text) as well as speak in Urdu. Both are translated into English.',
+          },
+          {
+            q: 'Does it work on every website?',
+            a: 'It runs as a Chrome side panel, so it is available on any website you visit \u2014 Gmail, job portals, freelancing sites, WhatsApp Web, Google Docs, and more. You can insert the translated text directly into the page you are on.',
+          },
+          {
+            q: 'Do I need to keep switching tabs like with Google Translate?',
+            a: 'No \u2014 that is the whole point. The side panel stays open next to the page you are working on, so you translate and insert without leaving it.',
+          },
+          {
+            q: 'Is my API key safe?',
+            a: 'You paste the key into the extension yourself, in your own browser. INVOTIC has no server in this loop and never sees your key \u2014 it goes directly from the extension to Google\u2019s API.',
+          },
+          {
+            q: 'Which languages does it translate between?',
+            a: 'Urdu to English: spoken Urdu, typed Urdu, and Roman Urdu all translate into English.',
           },
         ],
       },

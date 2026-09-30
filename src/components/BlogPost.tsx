@@ -8,6 +8,7 @@ import {
   Clock,
   MessageCircle,
   ChevronDown,
+  Download,
 } from 'lucide-react';
 import {
   getPost,
@@ -137,6 +138,35 @@ function Block({ block }: { block: ContentBlock }) {
             ))}
           </div>
         </div>
+      );
+    case 'toolLink':
+      return (
+        <div className="rounded-2xl border border-brand-red/30 bg-gradient-to-br from-brand-red/10 to-transparent p-8 my-10 text-center">
+          <h3 className="text-2xl font-display font-bold mb-3 text-white">{block.title}</h3>
+          <p className="text-gray-400 mb-6 max-w-xl mx-auto">{block.text}</p>
+          <a
+            href={block.href}
+            className="inline-flex items-center gap-2 bg-brand-red hover:bg-red-600 text-white px-8 py-3.5 rounded-md font-semibold transition-all hover:scale-105 bg-glow-red"
+          >
+            <Download size={18} /> {block.buttonText}
+          </a>
+        </div>
+      );
+    case 'image':
+      return (
+        <figure className="my-10">
+          <img
+            src={block.src}
+            alt={block.alt}
+            loading="lazy"
+            className="w-full rounded-2xl border border-white/10 shadow-2xl"
+          />
+          {block.caption && (
+            <figcaption className="text-center text-sm text-gray-500 mt-3">
+              {block.caption}
+            </figcaption>
+          )}
+        </figure>
       );
     case 'cta':
       return (
