@@ -8,6 +8,7 @@ import RevenueCalculator from './tools/RevenueCalculator';
 import MonetizationCalculator from './tools/MonetizationCalculator';
 import CpmByNiche from './tools/CpmByNiche';
 import TitleGenerator from './tools/TitleGenerator';
+import SpeakTranslate from './tools/SpeakTranslate';
 
 const whatsappNumber = '923484166937';
 
@@ -16,6 +17,7 @@ const toolComponents: Record<string, ComponentType> = {
   'youtube-monetization-calculator': MonetizationCalculator,
   'youtube-cpm-by-niche': CpmByNiche,
   'youtube-title-generator': TitleGenerator,
+  'speak-translate': SpeakTranslate,
 };
 
 export default function ToolPage() {

@@ -1,5 +1,4 @@
 import { motion } from 'motion/react';
-import { ArrowRight } from 'lucide-react';
 
 export default function Hero() {
   return (
@@ -129,18 +128,6 @@ export default function Hero() {
             </motion.div>
 
             {/* Floating Cards / Decorations */}
-            <motion.div
-              animate={{ y: [-10, 10, -10] }}
-              transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-10 -right-10 glass p-6 rounded-2xl border-white/20 w-48 shadow-2xl"
-            >
-              <div className="w-10 h-10 rounded-full bg-brand-cyan mb-4 flex items-center justify-center">
-                <ArrowRight size={20} className="text-black" />
-              </div>
-              <p className="text-xs font-bold text-brand-cyan uppercase tracking-tighter">Growth Status</p>
-              <p className="text-xl font-bold font-display">+240% View Count</p>
-            </motion.div>
-
             <motion.div
               animate={{ y: [10, -10, 10] }}
               transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}

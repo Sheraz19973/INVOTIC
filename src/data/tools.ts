@@ -3,6 +3,7 @@ import {
   Gauge,
   Coins,
   Type,
+  Mic,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -60,6 +61,17 @@ export const tools: ToolMeta[] = [
     seoTitle: 'YouTube Title Generator — Free Video Title Ideas | INVOTIC',
     seoDescription:
       'Free YouTube title generator. Enter your topic and get clickable video title ideas based on proven headline patterns.',
+  },
+  {
+    slug: 'speak-translate',
+    name: 'Speak & Translate',
+    tagline: 'Urdu voice → English text, in one window',
+    description:
+      'Free Chrome extension for anyone who can’t type in English: speak or type in Urdu / Roman Urdu and get live English translation inserted straight into ChatGPT or any website’s text box.',
+    icon: Mic,
+    seoTitle: 'Speak & Translate — Free Urdu Voice to English Chrome Extension | INVOTIC',
+    seoDescription:
+      'Download Speak & Translate free: speak or type in Urdu / Roman Urdu and get live English translation in any website. Setup guide included.',
   },
 ];
 

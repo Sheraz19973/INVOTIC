@@ -8,3 +8,23 @@
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]
 </IfModule>
+
+# Cache policy: HTML is never served stale; hashed assets cache long.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+</IfModule>
+<IfModule mod_headers.c>
+  # index.html and any HTML page: always revalidate (fixes "old site on first visit")
+  <FilesMatch "\.html$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+  # Vite's hashed JS/CSS: safe to cache for a year (filename changes every build)
+  <FilesMatch "\.(js|css)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+  # Images, fonts, downloads: cache 30 days
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|ico|svg|woff2?|ttf|eot|zip|b64|pdf)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+</IfModule>
