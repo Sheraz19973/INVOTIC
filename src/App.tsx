@@ -12,6 +12,7 @@ import Blog from './components/Blog';
 import BlogPost from './components/BlogPost';
 import Tools from './components/Tools';
 import ToolPage from './components/ToolPage';
+import InfoPage from './components/InfoPage';
 
 function HomePage() {
   return (
@@ -48,6 +49,8 @@ export default function App() {
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/tools" element={<Tools />} />
             <Route path="/tools/:slug" element={<ToolPage />} />
+            {/* Trust pages: /about, /contact, /privacy, /terms — unknown slugs redirect home */}
+            <Route path="/:slug" element={<InfoPage />} />
           </Routes>
         </main>
         <Footer />

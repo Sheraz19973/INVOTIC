@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import type { ComponentType } from 'react';
 import { motion } from 'motion/react';
@@ -30,6 +31,29 @@ export default function ToolPage() {
     tool ? tool.seoDescription : 'Free tools for YouTube creators.',
     `/tools/${slug ?? ''}`
   );
+
+  // Inject SoftwareApplication JSON-LD for rich results.
+  useEffect(() => {
+    if (!tool) return;
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.id = 'tool-jsonld';
+    script.textContent = JSON.stringify({
+      '@context': 'https://schema.org',
+      '@type': 'SoftwareApplication',
+      name: tool.name,
+      applicationCategory: 'UtilitiesApplication',
+      operatingSystem: 'Web',
+      offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+      url: `https://invotic.com/tools/${tool.slug}`,
+      description: tool.seoDescription,
+      author: { '@type': 'Organization', name: 'INVOTIC', url: 'https://invotic.com' },
+    });
+    document.head.appendChild(script);
+    return () => {
+      document.getElementById('tool-jsonld')?.remove();
+    };
+  }, [tool]);
 
   if (!tool) return <Navigate to="/tools" replace />;
   const Tool = toolComponents[tool.slug];

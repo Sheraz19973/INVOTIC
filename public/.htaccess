@@ -4,8 +4,10 @@
   RewriteCond %{HTTP_HOST} ^www\.invotic\.com$ [NC]
   RewriteRule ^(.*)$ https://invotic.com/$1 [R=301,L]
   RewriteRule ^index\.html$ - [L]
+  # SPA fallback: every non-file request serves index.html, including paths
+  # that match a real asset directory (e.g. /blog/ -> public/blog/). Without
+  # this, /blog/ returned 403 and Googlebot could not index /blog.
   RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteCond %{REQUEST_FILENAME} !-d
   RewriteRule . /index.html [L]
 </IfModule>
 

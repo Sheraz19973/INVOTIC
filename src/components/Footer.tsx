@@ -14,11 +14,13 @@ export default function Footer() {
 
         <div className="flex gap-6 uppercase tracking-widest font-bold text-[10px]">
           <a href="/#home" className="hover:text-white transition-colors">Home</a>
-          <a href="/#about" className="hover:text-white transition-colors">About</a>
-          <a href="/#contact" className="hover:text-white transition-colors">Contact</a>
+          <a href="/about" className="hover:text-white transition-colors">About</a>
+          <a href="/contact" className="hover:text-white transition-colors">Contact</a>
           <a href="/admission" className="hover:text-white transition-colors">Admission</a>
           <a href="/blog" className="hover:text-white transition-colors">Blog</a>
           <a href="/tools" className="hover:text-white transition-colors">Tools</a>
+          <a href="/privacy" className="hover:text-white transition-colors">Privacy</a>
+          <a href="/terms" className="hover:text-white transition-colors">Terms</a>
         </div>
       </div>
     </footer>
