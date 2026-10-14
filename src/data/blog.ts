@@ -40,7 +40,7 @@ export const posts: BlogPost[] = [
     excerpt:
       'Download entire Amazon creator storefronts in bulk \u2014 every video and image, with metadata. Free Chrome extension with a two-minute setup.',
     category: 'AI Tools',
-    tags: ['amazon creator video downloader', 'amazon video downloader chrome extension', 'download amazon influencer videos', 'amazon storefront downloader', 'free chrome extensions'],
+    tags: ['amazon video downloader', 'amazon creator video downloader', 'amazon video downloader chrome extension', 'download amazon influencer videos', 'amazon storefront downloader', 'free chrome extensions'],
     date: '2026-10-14',
     readTime: 6,
     keyword: 'amazon creator video downloader',
