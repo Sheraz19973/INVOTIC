@@ -39,7 +39,8 @@
   <url>
     <loc>https://invotic.com/blog/urdu-to-english-voice-translator-chrome-extension</loc>
 <loc>https://invotic.com/blog/muse-ai-invite-code-1-billion-free-tokens</loc>
-    <lastmod>2026-09-30</lastmod>
+<loc>https://invotic.com/blog/amazon-video-downloader-chrome-extension</loc>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -75,6 +76,7 @@
   </url>
   <url>
     <loc>https://invotic.com/tools/speak-translate</loc>
+<loc>https://invotic.com/tools/amazon-video-downloader</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
@@ -102,5 +104,17 @@
     <lastmod>2026-10-03</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://invotic.com/blog/youtube-shorts-original-content-update-october-2026</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://invotic.com/blog/ask-youtube-ai-search-mobile-rollout-october-2026</loc>
+    <lastmod>2026-10-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
 </urlset>

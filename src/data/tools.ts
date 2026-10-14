@@ -4,6 +4,7 @@ import {
   Coins,
   Type,
   Mic,
+  Video,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -72,6 +73,17 @@ export const tools: ToolMeta[] = [
     seoTitle: 'Speak & Translate — Free Urdu Voice to English Chrome Extension | INVOTIC',
     seoDescription:
       'Download Speak & Translate free: speak or type in Urdu / Roman Urdu and get live English translation in any website. Setup guide included.',
+  },
+  {
+    slug: 'amazon-video-downloader',
+    name: 'Amazon Video Downloader',
+    tagline: 'Bulk-download any Amazon creator’s videos',
+    description:
+      'Free Chrome extension: scan any Amazon creator storefront (amazon.com/shop/...), pick the videos and images you want, and download them in bulk with metadata.',
+    icon: Video,
+    seoTitle: 'Amazon Video Downloader — Free Chrome Extension for Creator Profiles | INVOTIC',
+    seoDescription:
+      'Download Amazon Video Downloader free: scan Amazon creator profiles, select videos and images, and bulk-download them with metadata. Setup guide included.',
   },
 ];
 

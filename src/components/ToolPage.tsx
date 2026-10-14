@@ -10,6 +10,7 @@ import MonetizationCalculator from './tools/MonetizationCalculator';
 import CpmByNiche from './tools/CpmByNiche';
 import TitleGenerator from './tools/TitleGenerator';
 import SpeakTranslate from './tools/SpeakTranslate';
+import AmazonVideoDownloader from './tools/AmazonVideoDownloader';
 
 const whatsappNumber = '923484166937';
 
@@ -19,6 +20,7 @@ const toolComponents: Record<string, ComponentType> = {
   'youtube-cpm-by-niche': CpmByNiche,
   'youtube-title-generator': TitleGenerator,
   'speak-translate': SpeakTranslate,
+  'amazon-video-downloader': AmazonVideoDownloader,
 };
 
 export default function ToolPage() {
