@@ -33,6 +33,123 @@ export interface BlogPost {
 
 export const posts: BlogPost[] = [
   {
+    slug: 'amazon-video-downloader-chrome-extension',
+    title: 'Amazon Video Downloader: Bulk-Download Any Amazon Creator\u2019s Videos (Free Chrome Extension)',
+    metaDescription:
+      'Free Amazon Video Downloader Chrome extension: scan any Amazon creator storefront and bulk-download videos and images with metadata. Setup guide inside.',
+    excerpt:
+      'Download entire Amazon creator storefronts in bulk \u2014 every video and image, with metadata. Free Chrome extension with a two-minute setup.',
+    category: 'AI Tools',
+    tags: ['amazon creator video downloader', 'amazon video downloader chrome extension', 'download amazon influencer videos', 'amazon storefront downloader', 'free chrome extensions'],
+    date: '2026-10-14',
+    readTime: 6,
+    keyword: 'amazon creator video downloader',
+    content: [
+      {
+        type: 'intro',
+        text: 'Saving Amazon videos one by one \u2014 right-click, save, repeat \u2014 is painful when a creator storefront has hundreds of posts. The Amazon Video Downloader is a free Chrome extension that scans an entire Amazon creator profile (amazon.com/shop/...) and lets you bulk-download the videos and images you want, with their metadata attached.',
+      },
+      {
+        type: 'p',
+        text: 'Below: what it does, how it\u2019s different from the product-page downloaders on the Chrome Web Store, and the two-minute setup.',
+      },
+      {
+        type: 'image',
+        src: '/blog/amazon-video-downloader-visual.svg',
+        alt: 'Amazon Video Downloader \u2014 free Chrome extension to bulk-download an Amazon creator\u2019s videos, by INVOTIC',
+        caption: 'Amazon Video Downloader \u2014 built by INVOTIC.',
+      },
+      { type: 'h2', text: 'What the Amazon Video Downloader Does' },
+      {
+        type: 'p',
+        text: 'Open any Amazon creator or influencer storefront, click the extension icon, and hit \u201cScan profile\u201d. The tool pages through the whole storefront automatically \u2014 even profiles with hundreds of videos \u2014 and lists everything it finds. You tick the videos and images you want (or select all) and download them in bulk. Each file comes with its post metadata, so you always know which video came from where.',
+      },
+      {
+        type: 'ul',
+        items: [
+          'Scans full creator storefronts on amazon.com, .co.uk, .de, .ca and .in \u2014 not just the visible page.',
+          'Bulk-downloads videos and images instead of one-by-one saving.',
+          'Attaches metadata (title, post info) to every download.',
+          'No signup, no API key, no paywall \u2014 free.',
+        ],
+      },
+      { type: 'h2', text: 'How It\u2019s Different From Other Amazon Downloaders' },
+      {
+        type: 'p',
+        text: 'Most Amazon downloader extensions on the Chrome Web Store work on product pages: open a listing, grab its gallery images and videos. That\u2019s useful for sellers \u2014 but it doesn\u2019t help when you want everything a creator has posted. This extension is built for the opposite job: creator storefronts (amazon.com/shop/...), whole-profile scanning, and bulk export with metadata. If your workflow starts from creators rather than products, that\u2019s the gap it fills.',
+      },
+      { type: 'h2', text: 'Who Is It For?' },
+      {
+        type: 'ul',
+        items: [
+          'Affiliate marketers studying what top Amazon creators post.',
+          'Product researchers collecting reference videos across niches.',
+          'Creators and editors gathering material they have the rights to reuse.',
+          'Agencies auditing influencer storefronts for campaigns.',
+        ],
+      },
+      { type: 'h2', text: 'How to Use It (Two-Minute Setup)' },
+      {
+        type: 'ol',
+        items: [
+          'Download the ZIP below and extract it.',
+          'Open chrome://extensions, turn on Developer Mode, click \u201cLoad unpacked\u201d, and select the extracted folder.',
+          'Open any Amazon creator profile (amazon.com/shop/...).',
+          'Click the extension icon \u2192 \u201cOpen Downloader\u201d \u2192 \u201cScan profile\u201d.',
+          'Select the videos and images you want and download them in bulk.',
+        ],
+      },
+      {
+        type: 'toolLink',
+        title: 'Get the Amazon Video Downloader free',
+        text: 'Download the extension and follow the full step-by-step setup guide.',
+        href: '/tools/amazon-video-downloader',
+        buttonText: 'Open the free download page',
+      },
+      { type: 'h2', text: 'Privacy: What It Does Not Do' },
+      {
+        type: 'p',
+        text: 'The extension only runs on Amazon\u2019s own domains, and everything happens locally in your browser. It collects no personal data, sends nothing to any external server, and contains no accounts, tracking or analytics. The only network requests it makes are to Amazon itself \u2014 to load the profile pages and media you asked it to download.',
+      },
+      {
+        type: 'callout',
+        title: 'A quick note on usage rights',
+        text: 'Download only content you have the right to use \u2014 your own uploads, or material the creator has licensed for reuse. Amazon\u2019s terms of service apply to automated downloading, so use the tool responsibly and at your own risk.',
+      },
+      { type: 'h2', text: 'Frequently Asked Questions' },
+      {
+        type: 'faq',
+        items: [
+          {
+            q: 'Is the Amazon Video Downloader really free?',
+            a: 'Yes \u2014 no signup, no API key, no paywall, no download limits.',
+          },
+          {
+            q: 'Which Amazon sites does it work on?',
+            a: 'Amazon.com, .co.uk, .de, .ca and .in creator storefronts (amazon.com/shop/... and equivalents).',
+          },
+          {
+            q: 'Do I need the Chrome Web Store version?',
+            a: 'There isn\u2019t one \u2014 the extension installs via \u201cLoad unpacked\u201d in Developer Mode, which takes about a minute (see the setup guide).',
+          },
+          {
+            q: 'Does it download from regular product pages too?',
+            a: 'It\u2019s built for creator storefronts. For product-page galleries, the Chrome Web Store downloaders are the better fit.',
+          },
+          {
+            q: 'Is my data sent anywhere?',
+            a: 'No. Everything runs locally in your browser; the extension only talks to Amazon\u2019s own servers to fetch the pages and media you request.',
+          },
+        ],
+      },
+      { type: 'h2', text: 'Final Thoughts' },
+      {
+        type: 'p',
+        text: 'If your work involves Amazon creators \u2014 research, affiliate marketing, or content workflows \u2014 grabbing a whole storefront in minutes instead of an afternoon of right-clicking is a genuine time-saver. It\u2019s free, it\u2019s local, and it takes two minutes to set up.',
+      },
+    ],
+  },
+  {
     slug: 'muse-ai-invite-code-1-billion-free-tokens',
     title: 'How to Get 1 Billion Free Tokens on Meta Muse AI (Invite Code Guide 2026)',
     metaDescription:
@@ -699,6 +816,242 @@ export const posts: BlogPost[] = [
           {
             q: 'Which languages does it translate between?',
             a: 'Urdu to English: spoken Urdu, typed Urdu, and Roman Urdu all translate into English.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'youtube-shorts-original-content-update-october-2026',
+    title: 'YouTube Shorts Original Content Update (October 2026): What Creators Need to Know',
+    metaDescription:
+      'YouTube is updating Shorts recommendations to favor original content and cut reach for re-uploaded clips. What counts as original \u2014 and what creators must change.',
+    excerpt:
+      'YouTube is changing how Shorts are ranked: original clips get more reach, reposted clips get less. Here is what counts as original \u2014 and what to change on your channel this week.',
+    category: 'AI News',
+    tags: ['youtube shorts update', 'shorts algorithm change', 'original content youtube', 'youtube repost rules'],
+    date: '2026-10-06',
+    readTime: 7,
+    keyword: 'youtube shorts original content update',
+    content: [
+      {
+        type: 'intro',
+        text: 'On October 1, 2026, YouTube announced one of the most impactful changes to its short-form recommendation system in years. Creator liaison Rene Ritchie said in a Creator Insider video that YouTube is updating its recommendation systems to further prioritize original content and reduce the reach of clips re-uploaded from other creators without meaningful additions. If your Shorts strategy relies on reposting, clipping, or lightly remixing other people\u2019s videos, this update is aimed directly at you.',
+      },
+      {
+        type: 'h2',
+        text: 'What exactly is changing',
+      },
+      {
+        type: 'p',
+        text: 'YouTube\u2019s recommendation systems assess billions of signals \u2014 watch history, interests, engagement \u2014 to decide which Shorts appear in front of viewers. Under the new approach, original clips get more weight and re-uploaded material gets less distribution in the Shorts feed, and in recommendations elsewhere on the platform. The target is channels that primarily aggregate or re-upload other creators\u2019 videos without significant changes: their Shorts are likely to appear less frequently in front of new viewers.',
+      },
+      {
+        type: 'p',
+        text: 'Three important boundaries were reported in the announcement, per coverage from Search Engine Journal, Storyboard18, and several creator outlets. First, this is not a ban \u2014 re-uploaded clips are not being removed, they are just ranked lower. Second, YouTube gave no start date for the change. Third, there is no screen in YouTube Studio that tells a creator whether their reach was reduced, so you will have to diagnose the effect yourself from your analytics.',
+      },
+      {
+        type: 'h2',
+        text: 'What YouTube says no longer counts as \u201Coriginal\u201D',
+      },
+      {
+        type: 'p',
+        text: 'The announcement was unusually specific about what will not qualify. According to Ritchie, three kinds of edits are not enough: a voice-over that only describes what is happening on screen, minor technical edits, and template-based bulk changes where the same template is applied across many clips. That last point targets a common pipeline: creators who record a brief generic voiceover over trending clips and claim the result as their own content.',
+      },
+      {
+        type: 'p',
+        text: 'What does count, per YouTube, is a creator\u2019s own commentary, analysis, and storytelling \u2014 contributions that add significant value beyond the source material. The standard mirrors YouTube\u2019s existing reused-content policy for monetization, which requires borrowed material to be changed \u201Csignificantly to make it your own.\u201D The message is consistent: the algorithm is learning to measure your contribution to each video, not just the fact that you uploaded it.',
+      },
+      {
+        type: 'h2',
+        text: 'The judgment happens at channel level, not video by video',
+      },
+      {
+        type: 'p',
+        text: 'This detail matters more than it looks. The assessment is made at the channel level \u2014 if your channel primarily publishes re-uploaded material, the whole channel\u2019s Shorts distribution can suffer, not just the individual clips. There is a recovery path: Ritchie said a channel that moves toward original content will have its reach re-evaluated by the recommendation system, though he gave no timeline for how long that takes.',
+      },
+      {
+        type: 'h2',
+        text: 'Recommendations only \u2014 monetization is a separate track',
+      },
+      {
+        type: 'p',
+        text: 'This update covers recommendations, not payments. Monetization still follows the separate reused-content policy, so a channel\u2019s ad revenue rules do not change \u2014 but a clipping channel now risks losing both: reduced recommendation reach on top of existing monetization limits for re-uploaded content. One open question the announcement did not resolve: what happens to creators who clip their own long-form videos into Shorts. For sharing someone else\u2019s video without re-uploading it, YouTube points creators to the Posts tab, which sends viewers to the original upload.',
+      },
+      {
+        type: 'h2',
+        text: 'Why this hits clipping and automation channels hardest',
+      },
+      {
+        type: 'p',
+        text: 'The clipping economy has been one of the fastest-growing shortcuts on the platform: podcast highlights, livestream moments, viral clips, and compilation pages, often run at scale with template pipelines and freelance editors. Storyboard18 noted this ecosystem sits directly in the update\u2019s path. Channels built on thin-value reposts now face a structural headwind \u2014 not a policy strike, but a quiet reduction in the distribution that made the model work.',
+      },
+      {
+        type: 'p',
+        text: 'For faceless and automation creators, this is a fork in the road, not a dead end. The update does not punish automation itself; it punishes recycled content with nothing added. A faceless channel with original scripts, original commentary, and original editing is exactly the kind of content the system is being tuned to favor. This is also the latest move in a longer tightening: RedShark News noted the update follows YouTube\u2019s July 2026 inauthentic-content policy clarification, which stripped monetization from generic templated content, emotionally manipulative shock content, and AI personas posing as human experts.',
+      },
+      {
+        type: 'callout',
+        title: 'What this means for you',
+        text: 'YouTube is drawing a bright line between creating and republishing. Voice-over descriptions, minor edits, and bulk templates will not protect a repost channel\u2019s reach. If you run Shorts on recycled footage, the fix is not another editing trick \u2014 it is adding a genuine original layer to every clip: your commentary, your analysis, your story.',
+      },
+      {
+        type: 'h2',
+        text: 'What to do on your channel this week',
+      },
+      {
+        type: 'ol',
+        items: [
+          'Audit your Shorts catalog now: count how many of your last 30 uploads add real commentary or analysis versus reposting footage with light edits. That is the inventory the algorithm will judge.',
+          'Add an original layer to every new Short: face-camera commentary, analytical breakdowns, original storytelling around a clip \u2014 not a voice-over that just describes what viewers can already see.',
+          'Stop bulk-template pipelines. Clips produced by applying the same template to dozens of uploads are explicitly called out as insufficient. Each Short needs its own angle.',
+          'If you want to share other creators\u2019 videos, use the Posts tab instead of re-uploading \u2014 it sends viewers to the original and keeps your channel\u2019s originality signal clean.',
+          'Track your Shorts reach weekly from your analytics: with no Studio warning for reduced reach, impression and view-source data is your only early signal, and it is also the evidence the system is re-evaluating you once you change course.',
+        ],
+      },
+      {
+        type: 'p',
+        text: 'The broader direction is unmistakable. Between this update, the inauthentic-content monetization rules, and the expanding likeness-detection tools, YouTube is systematically squeezing low-effort and synthetic content out of distribution and monetization at the same time. The creators who win are the ones whose contribution is undeniable \u2014 original ideas, original commentary, original packaging. That has always been the winning formula; now the algorithm is being rebuilt to enforce it.',
+      },
+      { type: 'cta' },
+      {
+        type: 'faq',
+        items: [
+          {
+            q: 'When does the YouTube Shorts original content update take effect?',
+            a: 'YouTube announced the change on October 1, 2026, via the Creator Insider channel and a TeamYouTube community post, but gave no start date for the recommendation-system update. Monitor your Shorts analytics for reach changes.',
+          },
+          {
+            q: 'Does this update ban clipping or reposting other creators\u2019 videos?',
+            a: 'No. Re-uploaded clips are not being removed or demonetized by this update \u2014 they simply get less recommendation distribution. It is a ranking change, not a ban, and creators who shift toward original content will have their reach re-evaluated.',
+          },
+          {
+            q: 'Will adding a voiceover to a clip keep my Shorts safe?',
+            a: 'Not on its own. YouTube specifically said a voice-over that only describes what is happening on screen does not count as original content, and neither do minor technical edits or template-based bulk changes.',
+          },
+          {
+            q: 'Does this update affect monetization?',
+            a: 'No \u2014 this change is recommendations-only. Monetization still follows the separate reused-content policy. But repost channels can now lose both: reduced reach from this update plus existing monetization limits.',
+          },
+          {
+            q: 'Can a channel recover its reach after switching to original content?',
+            a: 'Yes. YouTube creator liaison Rene Ritchie said the recommendation system will re-evaluate a channel\u2019s reach once it moves toward original content, though YouTube gave no timeline for how long that takes.',
+          },
+        ],
+      },
+    ],
+  },
+  {
+    slug: 'ask-youtube-ai-search-mobile-rollout-october-2026',
+    title: 'YouTube Ask YouTube AI Search Rolls Out to Mobile (October 2026): What It Means for Creators',
+    metaDescription:
+      'YouTube\u2019s Ask YouTube AI search is now on mobile for US viewers \u2014 no Premium needed. How conversational search changes discovery, and what creators should do.',
+    excerpt:
+      'YouTube\u2019s conversational AI search just landed on every US phone. Viewers can now ask full questions instead of typing keywords \u2014 and that changes how your videos get found.',
+    category: 'AI News',
+    tags: ['ask youtube', 'youtube ai search', 'youtube mobile update', 'youtube discovery'],
+    date: '2026-10-13',
+    readTime: 6,
+    keyword: 'ask youtube ai search',
+    content: [
+      {
+        type: 'intro',
+        text: 'On October 12, 2026, YouTube announced that Ask YouTube \u2014 its conversational, AI-powered search experience \u2014 is expanding to mobile devices for viewers in the United States. The feature, powered by Gemini, lets viewers ask full questions in plain language instead of typing short keywords, and get back text answers plus video clips that match. It is one of the quietest changes YouTube has made this year, and one of the most consequential for how videos get discovered.',
+      },
+      {
+        type: 'h2',
+        text: 'What changed on October 12',
+      },
+      {
+        type: 'p',
+        text: 'Ask YouTube is not brand new. YouTube began testing a conversational search tool in April 2026, announced it publicly at Google I/O 2026, and rolled it out first on the web and on TV, where it was initially limited to Premium subscribers. The October 12 announcement, reported by 9to5Google, TechTimes, and Storyboard18, brings the feature to the YouTube app on Android and iOS in the US \u2014 and drops the Premium requirement. It is now available to all users, not just paying subscribers.',
+      },
+      {
+        type: 'p',
+        text: 'Two details matter for expectations. First, the rollout is gradual: Google said it plans to expand availability over time, so not every US account will see the feature on day one. Second, it is US-only for now. Storyboard18 reports YouTube has given no timeline for international availability, and the company has not confirmed whether the same expansion will reach Canada. If you are outside the US, you may not be able to test it on your own account yet.',
+      },
+      {
+        type: 'h2',
+        text: 'How Ask YouTube actually works',
+      },
+      {
+        type: 'p',
+        text: 'According to coverage from Mac Observer and TechTimes, viewers will find a new Ask button in the search bar. Tapping it opens a chat interface where you can type a complete question \u2014 for example, asking for a Halloween costume idea for a specific theme and budget, or for a beginner-friendly bicycle repair tutorial \u2014 instead of guessing the right two or three keywords. The AI returns a text answer with matching video clips, and if the first results miss the mark, you can ask a follow-up question to narrow them down.',
+      },
+      {
+        type: 'p',
+        text: 'One detail stands out for creators: videos surfaced by Ask YouTube can start playing at the timestamp that directly answers the question. Discovery is no longer just about which video wins the click \u2014 it is about which moment inside a video answers the viewer\u2019s question. That is a meaningful shift from keyword search, where the title and thumbnail did almost all the work.',
+      },
+      {
+        type: 'h2',
+        text: 'What is still coming: Shorts and live streams',
+      },
+      {
+        type: 'p',
+        text: 'The October 12 expansion covers search. Separately, YouTube plans to bring Ask YouTube to the watch page inside the Shorts feed and during live streams, so viewers will be able to ask questions about the video they are actively watching. That part is a later release, not live yet. Per reporting from The Packet, the Shorts experiment will initially be restricted to English-language interactions and viewers aged 18 or older, and YouTube has not announced a full list of participating countries. The feature is also not available for supervised kid accounts or in the YouTube Kids app.',
+      },
+      {
+        type: 'p',
+        text: 'The scale is already significant. During Alphabet\u2019s second-quarter 2026 earnings commentary, CEO Sundar Pichai said more than 140 million users had interacted with Ask YouTube on the watch page in June, as reported by The Packet. That was before the mobile rollout \u2014 which means conversational search is moving from an experiment to a mainstream discovery surface.',
+      },
+      {
+        type: 'h2',
+        text: 'Why this matters more than another search tweak',
+      },
+      {
+        type: 'p',
+        text: 'Keyword search rewards videos optimized for the exact phrase a viewer types. Conversational search rewards videos that answer a real question clearly. When a viewer asks, \u201Chow do I fix a leaking tap without special tools,\u201D the system is not matching keywords \u2014 it is trying to understand intent, skill level, constraints, and the specific moment in a video that solves the problem. Channels that already answer questions thoroughly, in plain language, with clear structure, are the ones this system is built to surface.',
+      },
+      {
+        type: 'p',
+        text: 'It also changes what \u201Ccompetition\u201D looks like. In keyword search, one strong video can own a phrase for months. In conversational search, the same video competes on every answer it contains: a single well-structured tutorial can surface for dozens of differently worded questions, while a video that buries its answer under a long intro may never get matched at all. The advantage moves from packaging toward substance \u2014 which is good news for creators who actually teach something.',
+      },
+      {
+        type: 'callout',
+        title: 'What this means for you',
+        text: 'Discovery on YouTube is shifting from keywords to questions. The creators who win under Ask YouTube are not the ones with the cleverest titles \u2014 they are the ones whose videos contain clear, timestamped answers to questions real viewers actually ask.',
+      },
+      {
+        type: 'h2',
+        text: 'What creators should do now',
+      },
+      {
+        type: 'ol',
+        items: [
+          'Answer the question early and out loud. State the viewer\u2019s problem and your answer in the first 30 seconds, in plain words they would use when asking. If the AI cannot find a clear answer in your video, it cannot surface it.',
+          'Use chapters and timestamps generously. Since Ask YouTube can jump viewers straight to the answering moment, well-labelled chapters make your video machine-readable \u2014 and more likely to be the clip that gets picked.',
+          'Write titles and descriptions around real questions, not just keywords. A title like \u201CHow to Fix a Leaking Tap Without Special Tools\u201D matches how people actually ask, and a description that restates the question and the answer gives the system more to work with.',
+          'Cover the follow-up questions too. Conversational search thrives on follow-ups, so a video that answers the main question plus the three obvious next questions (\u201Cwhat if it still leaks?\u201D, \u201Cwhich part do I replace?\u201D) has more matching moments than a video that stops at one answer.',
+          'Tag your products. Ask YouTube already surfaces product-related answers and shopping queries, so creators in the affiliate program should keep product tags accurate \u2014 conversational shopping questions are a discovery path now, not a future one.',
+        ],
+      },
+      {
+        type: 'p',
+        text: 'None of this requires changing what kind of channel you run. It rewards the same habits that already make good videos: clear answers, honest titles, tight structure, and respect for the viewer\u2019s time. The difference is that the recommendation and search systems are now explicitly built to measure those qualities, not just clicks. Creators who treat every video as an answer to a real question will find this update working for them \u2014 whether or not they ever see the Ask button on their own phone.',
+      },
+      { type: 'cta' },
+      {
+        type: 'faq',
+        items: [
+          {
+            q: 'What is Ask YouTube?',
+            a: 'Ask YouTube is YouTube\u2019s conversational AI search feature, powered by Gemini. Instead of typing keywords, viewers ask full questions in a chat interface and get text answers plus matching video clips, with follow-up questions to refine results.',
+          },
+          {
+            q: 'When did Ask YouTube come to mobile?',
+            a: 'YouTube announced the mobile expansion on October 12, 2026, bringing Ask YouTube to Android and iOS in the United States. The rollout is gradual, so not every US account sees it immediately.',
+          },
+          {
+            q: 'Do you need YouTube Premium to use Ask YouTube?',
+            a: 'No. Ask YouTube was initially limited to Premium subscribers on some surfaces, but the October 2026 mobile rollout makes it available to all users in the US.',
+          },
+          {
+            q: 'Is Ask YouTube available outside the US?',
+            a: 'Not yet for the mobile search expansion. YouTube has given no timeline for international availability. The watch-page version inside Shorts and live streams is a later release with its own restrictions, including English-only and 18+ for the Shorts experiment.',
+          },
+          {
+            q: 'How does Ask YouTube change what creators should do?',
+            a: 'It rewards videos that answer real questions clearly and early, with chapters and timestamps so the system can jump to the answering moment. Titles and descriptions written around natural questions \u2014 not just keywords \u2014 are more likely to surface in conversational search.',
           },
         ],
       },
