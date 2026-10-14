@@ -140,6 +140,10 @@ export const posts: BlogPost[] = [
             q: 'Is my data sent anywhere?',
             a: 'No. Everything runs locally in your browser; the extension only talks to Amazon\u2019s own servers to fetch the pages and media you request.',
           },
+          {
+            q: 'Where can I download the Amazon Video Downloader?',
+            a: 'Right here on INVOTIC \u2014 it\u2019s free. Head to our Amazon Video Downloader tool page, click \u201cDownload free\u201d, and follow the two-minute setup guide.',
+          },
         ],
       },
       { type: 'h2', text: 'Final Thoughts' },
