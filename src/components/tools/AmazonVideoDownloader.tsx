@@ -196,7 +196,16 @@ export default function AmazonVideoDownloader() {
 
       {/* Support */}
       <p className="mt-8 text-center text-gray-500 text-sm">
-        Stuck on any step?{' '}
+        Prefer reading?{' '}
+        <a
+          href="/blog/amazon-video-downloader-chrome-extension"
+          className="text-brand-red hover:text-white font-semibold underline transition-colors"
+        >
+          Read the full Amazon Video Downloader guide
+        </a>
+        <br />
+        <span className="inline-block mt-3">
+          Stuck on any step?{' '}
         <a
           href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
             'Hi INVOTIC! I need help setting up the Amazon Video Downloader extension.'
@@ -207,6 +216,7 @@ export default function AmazonVideoDownloader() {
         >
           <MessageCircle size={14} /> Message us on WhatsApp
         </a>
+        </span>
       </p>
     </div>
   );
