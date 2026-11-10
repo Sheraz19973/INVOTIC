@@ -50,9 +50,27 @@ function ScrollToTop() {
   return null;
 }
 
+/** Tells the motion layer (public/invotic-motion.js) that React has taken over the prerendered HTML. */
+function HydratedSignal() {
+  useEffect(() => {
+    (window as unknown as { __invoticHydrated?: boolean }).__invoticHydrated = true;
+    window.dispatchEvent(new Event('invotic:hydrated'));
+  }, []);
+  return null;
+}
+
 export default function App() {
   return (
     <Router>
+      <AppShell />
+    </Router>
+  );
+}
+
+/** The whole site without a router: the browser wraps it in BrowserRouter, the build-time
+ *  prerender (src/entry-server.tsx) in StaticRouter, so the HTML Google sees is the real page. */
+export function AppShell() {
+  return (
       <div className="min-h-screen bg-black">
         <Navbar />
         <main>
@@ -69,10 +87,11 @@ export default function App() {
               <Route path="/:slug" element={<InfoPage />} />
               <Route path="*" element={<NotFound />} />
             </Routes>
+            {/* inside Suspense: fires only after the page content itself has hydrated */}
+            <HydratedSignal />
           </Suspense>
         </main>
         <Footer />
       </div>
-    </Router>
   );
 }
