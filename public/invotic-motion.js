@@ -1,10 +1,10 @@
-/* INVOTIC motion layer v1.0
+/* INVOTIC motion layer v1.1
    Works on top of the built React site without changing it.
    Safe to remove: delete the two invotic-motion lines from index.html. */
 (function () {
   'use strict';
   if (window.__invoticMotion) return;
-  window.__invoticMotion = '1.0';
+  window.__invoticMotion = '1.1';
 
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -113,6 +113,16 @@
       new MutationObserver(schedule).observe(document.body, { childList: true, subtree: true });
     }
   }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start);
-  else start();
+  /* pages are prerendered HTML: wait until React has hydrated it, or React would see the
+     split headline as a mismatch and redraw the page */
+  function whenReady() {
+    var root = document.getElementById('root');
+    if (window.__invoticHydrated || !root || !root.hasChildNodes()) return start();
+    var done = false;
+    function go() { if (!done) { done = true; start(); } }
+    window.addEventListener('invotic:hydrated', function () { setTimeout(go, 0); }, { once: true });
+    setTimeout(go, 5000);
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', whenReady);
+  else whenReady();
 })();
