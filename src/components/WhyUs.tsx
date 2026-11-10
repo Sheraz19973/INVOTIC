@@ -47,7 +47,13 @@ export default function WhyUs() {
               className="relative aspect-square rounded-[3rem] overflow-hidden border border-white/10 group"
             >
               <img
-                src="profile.jpg"
+                src="/profile-480.webp"
+                srcSet="/profile-480.webp 480w, /profile-800.webp 800w"
+                sizes="(min-width: 1024px) 400px, 100vw"
+                width={480}
+                height={640}
+                loading="lazy"
+                decoding="async"
                 alt="Sheraz Khan Experience"
                 className="w-full h-full object-cover object-top grayscale hover:grayscale-0 transition-all duration-700"
               />

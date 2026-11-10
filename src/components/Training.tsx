@@ -72,7 +72,13 @@ export default function Training() {
           >
             <div className="relative z-10 rounded-[2.5rem] overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] aspect-[4/5] bg-brand-surface">
               <img
-                src="profile.jpg"
+                src="/profile-800.webp"
+                srcSet="/profile-480.webp 480w, /profile-800.webp 800w"
+                sizes="(min-width: 1024px) 600px, 100vw"
+                width={800}
+                height={1067}
+                loading="lazy"
+                decoding="async"
                 alt="Sheraz Khan Training"
                 className="w-full h-full object-cover object-top"
               />
@@ -80,9 +86,17 @@ export default function Training() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent flex flex-col justify-end p-10">
                 <div className="flex items-center gap-3 mb-6 bg-black/40 backdrop-blur-md w-fit px-4 py-2 rounded-full border border-white/10">
                   <div className="flex -space-x-2">
-                    {[1, 2, 3].map(i => (
-                      <div key={i} className="w-8 h-8 rounded-full border-2 border-brand-dark overflow-hidden bg-gray-800">
-                        <img src={`https://picsum.photos/seed/student${i}/50/50`} alt="Student" referrerPolicy="no-referrer" />
+                    {[
+                      { initials: 'AK', bg: 'bg-brand-red' },
+                      { initials: 'MS', bg: 'bg-brand-cyan text-black' },
+                      { initials: 'HR', bg: 'bg-white text-black' },
+                    ].map((s) => (
+                      <div
+                        key={s.initials}
+                        aria-hidden="true"
+                        className={`w-8 h-8 rounded-full border-2 border-brand-dark flex items-center justify-center text-[11px] font-extrabold ${s.bg}`}
+                      >
+                        {s.initials}
                       </div>
                     ))}
                   </div>
@@ -98,7 +112,7 @@ export default function Training() {
                 <div className="text-4xl font-display font-black text-brand-cyan mb-1 flex items-baseline">
                   10<span className="text-2xl">+</span>
                 </div>
-                <div className="text-[10px] font-extrabold uppercase tracking-widest text-gray-400 leading-tight">Years Industry <br /> Experience</div>
+                <div className="text-[11px] font-extrabold uppercase tracking-widest text-gray-400 leading-tight">Years Industry <br /> Experience</div>
               </div>
             </div>
 

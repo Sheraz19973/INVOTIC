@@ -82,6 +82,8 @@ export default function Navbar() {
         <button
           className="md:hidden text-white p-2"
           onClick={() => setIsOpen(true)}
+          aria-label="Open menu"
+          aria-expanded={isOpen}
         >
           <Menu size={24} />
         </button>
@@ -106,7 +108,7 @@ export default function Navbar() {
               className="fixed top-0 right-0 bottom-0 w-80 bg-brand-navy border-l border-white/10 z-50 md:hidden p-8 flex flex-col"
             >
               <div className="flex justify-end mb-8">
-                <button onClick={() => setIsOpen(false)} className="text-white p-2 hover:bg-white/5 rounded-full">
+                <button onClick={() => setIsOpen(false)} aria-label="Close menu" className="text-white p-2 hover:bg-white/5 rounded-full">
                   <X size={24} />
                 </button>
               </div>

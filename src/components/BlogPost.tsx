@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { Link, Navigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import { motion } from 'motion/react';
 import {
   ArrowLeft,
@@ -16,6 +16,7 @@ import {
   formatDate,
   type ContentBlock,
 } from '../data/blog';
+import NotFound from './NotFound';
 
 const whatsappNumber = '923484166937';
 const SITE_URL = 'https://invotic.com';
@@ -25,15 +26,12 @@ const DEFAULT_DESC =
 
 function usePostSeo(slug: string, title: string, description: string) {
   useEffect(() => {
-    const prevTitle = document.title;
     document.title = `${title} | INVOTIC Blog`;
 
     const meta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
-    const prevDesc = meta?.getAttribute('content') ?? '';
     if (meta) meta.setAttribute('content', description);
 
     const canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-    const prevCanonical = canonical?.getAttribute('href') ?? '';
     if (canonical) canonical.setAttribute('href', `${SITE_URL}/blog/${slug}`);
 
     const script = document.createElement('script');
@@ -42,11 +40,11 @@ function usePostSeo(slug: string, title: string, description: string) {
     document.head.appendChild(script);
 
     return () => {
-      document.title = prevTitle || DEFAULT_TITLE;
+      document.title = DEFAULT_TITLE;
       const m = document.querySelector<HTMLMetaElement>('meta[name="description"]');
-      if (m) m.setAttribute('content', prevDesc || DEFAULT_DESC);
+      if (m) m.setAttribute('content', DEFAULT_DESC);
       const c = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-      if (c) c.setAttribute('href', prevCanonical || `${SITE_URL}/`);
+      if (c) c.setAttribute('href', `${SITE_URL}/`);
       document.getElementById('blogpost-jsonld')?.remove();
     };
   }, [slug, title, description]);
@@ -201,7 +199,7 @@ export default function BlogPost() {
     window.scrollTo(0, 0);
   }, [slug]);
 
-  if (!post) return <Navigate to="/blog" replace />;
+  if (!post) return <NotFound />;
 
   usePostSeo(post.slug, post.title, post.metaDescription);
 

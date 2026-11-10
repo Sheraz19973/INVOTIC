@@ -1,9 +1,10 @@
-import { Navigate, useParams, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { motion } from 'motion/react';
 import { ArrowLeft, CalendarDays } from 'lucide-react';
 import { getInfoPage } from '../data/infoPages';
 import { usePageSeo } from '../hooks/usePageSeo';
 import Contact from './Contact';
+import NotFound from './NotFound';
 
 export default function InfoPage() {
   const { slug } = useParams();
@@ -15,13 +16,13 @@ export default function InfoPage() {
     `/${slug ?? ''}`
   );
 
-  if (!page) return <Navigate to="/" replace />;
+  if (!page) return <NotFound />;
 
   // /contact reuses the homepage contact section as a standalone page.
   if (slug === 'contact') {
     return (
       <div className="pt-24 bg-black min-h-screen">
-        <Contact />
+        <Contact asPage />
       </div>
     );
   }

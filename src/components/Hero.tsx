@@ -2,7 +2,7 @@ import { motion } from 'motion/react';
 
 export default function Hero() {
   return (
-    <section id="home" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-brand-dark pt-20">
+    <section id="home" className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-brand-dark pt-32 pb-16 lg:pt-36">
       {/* Background Orbs */}
       <motion.div
         animate={{
@@ -84,19 +84,19 @@ export default function Hero() {
           <div className="mt-16 grid grid-cols-2 sm:flex sm:items-center gap-6 sm:gap-12 border-t border-white/5 pt-8 max-w-lg lg:mx-0 mx-auto">
             <div className="text-center sm:border-r border-white/5 sm:pr-8">
               <p className="text-xl font-bold text-white">10+</p>
-              <p className="text-[0.65rem] font-bold text-gray-400 uppercase tracking-widest">Years Exp</p>
+              <p className="text-[0.7rem] font-bold text-gray-400 uppercase tracking-widest">Years Exp</p>
             </div>
             <div className="text-center sm:border-r border-white/5 sm:pr-8">
               <p className="text-xl font-bold text-white">2016</p>
-              <p className="text-[0.65rem] font-bold text-gray-400 uppercase tracking-widest">Started</p>
+              <p className="text-[0.7rem] font-bold text-gray-400 uppercase tracking-widest">Started</p>
             </div>
             <div className="text-center sm:border-r border-white/5 sm:pr-8">
               <p className="text-xl font-bold text-white">500+</p>
-              <p className="text-[0.65rem] font-bold text-gray-400 uppercase tracking-widest">Channels</p>
+              <p className="text-[0.7rem] font-bold text-gray-400 uppercase tracking-widest">Channels</p>
             </div>
             <div className="text-center">
               <p className="text-xl font-bold text-white">100%</p>
-              <p className="text-[0.65rem] font-bold text-gray-400 uppercase tracking-widest">Success</p>
+              <p className="text-[0.7rem] font-bold text-gray-400 uppercase tracking-widest">Success</p>
             </div>
           </div>
         </motion.div>
@@ -118,9 +118,14 @@ export default function Hero() {
               transition={{ duration: 6, repeat: Infinity, ease: "easeInOut" }}
               className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] lg:w-[400px] lg:h-[400px] overflow-hidden rounded-[2rem] sm:rounded-[3rem] border border-white/10 shadow-[0_0_50px_rgba(255,0,0,0.2)] bg-brand-surface"
             >
-              <img 
-                src="profile.jpg" 
-                alt="Sheraz Khan - YouTube Automation Expert & Founder" 
+              <img
+                src="/profile-800.webp"
+                srcSet="/profile-480.webp 480w, /profile-800.webp 800w"
+                sizes="(min-width: 1024px) 400px, 350px"
+                width={800}
+                height={1067}
+                fetchPriority="high"
+                alt="Sheraz Khan - YouTube Automation Expert & Founder"
                 className="w-full h-full object-cover object-top"
               />
               <div className="absolute inset-0 bg-gradient-to-tr from-brand-red/20 to-transparent mix-blend-overlay" />

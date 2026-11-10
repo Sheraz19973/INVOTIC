@@ -1,10 +1,11 @@
 import { useEffect } from 'react';
-import { Link, Navigate, useParams } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import type { ComponentType } from 'react';
 import { motion } from 'motion/react';
 import { ArrowLeft, MessageCircle } from 'lucide-react';
 import { getTool } from '../data/tools';
 import { usePageSeo } from '../hooks/usePageSeo';
+import NotFound from './NotFound';
 import RevenueCalculator from './tools/RevenueCalculator';
 import MonetizationCalculator from './tools/MonetizationCalculator';
 import CpmByNiche from './tools/CpmByNiche';
@@ -57,9 +58,9 @@ export default function ToolPage() {
     };
   }, [tool]);
 
-  if (!tool) return <Navigate to="/tools" replace />;
+  if (!tool) return <NotFound />;
   const Tool = toolComponents[tool.slug];
-  if (!Tool) return <Navigate to="/tools" replace />;
+  if (!Tool) return <NotFound />;
   const Icon = tool.icon;
 
   return (

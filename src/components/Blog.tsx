@@ -2,7 +2,12 @@ import { useState } from 'react';
 import { motion } from 'motion/react';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Clock, CalendarDays, Tag } from 'lucide-react';
-import { posts, categories, formatDate, type BlogPost } from '../data/blog';
+import { posts as allPosts, categories, formatDate, type BlogPost } from '../data/blog';
+import { usePageSeo } from '../hooks/usePageSeo';
+import { pageSeo } from '../data/pageSeo';
+
+// Newest first, so the latest article is always the featured one.
+const posts = [...allPosts].sort((a, b) => b.date.localeCompare(a.date));
 
 function PostCard({ post, large = false }: { post: BlogPost; large?: boolean }) {
   return (
@@ -52,6 +57,7 @@ function PostCard({ post, large = false }: { post: BlogPost; large?: boolean }) 
 }
 
 export default function Blog() {
+  usePageSeo(pageSeo.blog.title, pageSeo.blog.description, '/blog');
   const [activeCategory, setActiveCategory] = useState<string>('All');
 
   const filtered =

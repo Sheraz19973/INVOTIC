@@ -1,8 +1,11 @@
 import { motion } from 'motion/react';
 import { ArrowLeft, ClipboardCheck } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { usePageSeo } from '../hooks/usePageSeo';
+import { pageSeo } from '../data/pageSeo';
 
 export default function AdmissionForm() {
+  usePageSeo(pageSeo.admission.title, pageSeo.admission.description, '/admission');
   const formUrl = "https://docs.google.com/forms/d/e/1FAIpQLSf_lwi_V1KLOEiFUcTZdTHZLGyLOBDj83nWWlL3Z0E5Vh1TaA/viewform?usp=publish-editor";
 
   return (

@@ -3,13 +3,10 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Wrench } from 'lucide-react';
 import { tools } from '../data/tools';
 import { usePageSeo } from '../hooks/usePageSeo';
+import { pageSeo } from '../data/pageSeo';
 
 export default function Tools() {
-  usePageSeo(
-    'Free YouTube Tools — Calculators & Generators | INVOTIC',
-    'Free tools for YouTube creators: revenue calculator, monetization tracker, CPM by niche explorer, and a video title generator.',
-    '/tools'
-  );
+  usePageSeo(pageSeo.tools.title, pageSeo.tools.description, '/tools');
 
   return (
     <div className="pt-32 pb-24 bg-brand-dark min-h-screen">

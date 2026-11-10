@@ -2,7 +2,9 @@ import { useState, FormEvent } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { Mail, MessageCircle, Facebook, Twitter, Smartphone, Send, CheckCircle2 } from 'lucide-react';
 
-export default function Contact() {
+export default function Contact({ asPage = false }: { asPage?: boolean }) {
+  // On /contact this section is the whole page, so its heading becomes the page's H1.
+  const Heading = asPage ? 'h1' : 'h2';
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
@@ -46,10 +48,10 @@ export default function Contact() {
 
           <div className="relative z-10 grid lg:grid-cols-2 gap-16">
             <div>
-              <h2 className="text-4xl md:text-6xl font-display font-bold mb-6 tracking-tighter leading-tight">
+              <Heading className="text-4xl md:text-6xl font-display font-bold mb-6 tracking-tighter leading-tight">
                 Ready to Fix, Grow, or <br />
                 <span className="text-brand-red">Automate</span> Your Channel?
-              </h2>
+              </Heading>
               <p className="text-xl text-gray-400 mb-10 leading-relaxed font-light">
                 Our experts are ready to take your channel to the next level. Let's discuss your project and start your journey to <span className="text-brand-red">YouTube</span> success today.
               </p>
@@ -84,9 +86,10 @@ export default function Contact() {
                     href={social.href}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label={`INVOTIC on ${social.name}`}
                     className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white/10 hover:border-white/30 transition-all text-gray-400 hover:text-white"
                   >
-                    <social.icon size={20} />
+                    <social.icon size={20} aria-hidden="true" />
                   </motion.a>
                 ))}
               </div>
@@ -105,7 +108,11 @@ export default function Contact() {
                     <h3 className="text-2xl font-display font-bold mb-8">Quick Message</h3>
                     <form className="space-y-4" onSubmit={handleSubmit}>
                       <div>
+                        <label htmlFor="contact-name" className="sr-only">Full name</label>
                         <input
+                          id="contact-name"
+                          name="name"
+                          autoComplete="name"
                           type="text"
                           required
                           placeholder="Full Name"
@@ -115,7 +122,11 @@ export default function Contact() {
                         />
                       </div>
                       <div>
+                        <label htmlFor="contact-email" className="sr-only">Email address</label>
                         <input
+                          id="contact-email"
+                          name="email"
+                          autoComplete="email"
                           type="email"
                           required
                           placeholder="Email Address"
@@ -125,7 +136,10 @@ export default function Contact() {
                         />
                       </div>
                       <div>
+                        <label htmlFor="contact-message" className="sr-only">About your channel</label>
                         <textarea
+                          id="contact-message"
+                          name="message"
                           required
                           placeholder="Tell us about your channel..."
                           rows={4}
