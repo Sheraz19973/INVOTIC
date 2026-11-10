@@ -1,30 +1,28 @@
 import { useEffect } from 'react';
+import { pageSeo } from '../data/pageSeo';
 
 const SITE_URL = 'https://invotic.com';
-const DEFAULT_TITLE = 'INVOTIC | YouTube Automation Training by Sheraz Khan';
-const DEFAULT_DESC =
-  'Learn YouTube automation from beginner to advanced with INVOTIC. Free and paid training programs by Sheraz Khan to build, grow, and monetize your channel.';
+const DEFAULT_TITLE = pageSeo.home.title;
+const DEFAULT_DESC = pageSeo.home.description;
 
 /** Sets title, meta description and canonical for a page. Call unconditionally. */
 export function usePageSeo(title: string, description: string, path: string) {
   useEffect(() => {
-    const prevTitle = document.title;
     document.title = title;
 
     const meta = document.querySelector<HTMLMetaElement>('meta[name="description"]');
-    const prevDesc = meta?.getAttribute('content') ?? '';
     if (meta) meta.setAttribute('content', description);
 
     const canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-    const prevCanonical = canonical?.getAttribute('href') ?? '';
     if (canonical) canonical.setAttribute('href', `${SITE_URL}${path}`);
 
+    // Always fall back to the homepage values: the next page sets its own right after.
     return () => {
-      document.title = prevTitle || DEFAULT_TITLE;
+      document.title = DEFAULT_TITLE;
       const m = document.querySelector<HTMLMetaElement>('meta[name="description"]');
-      if (m) m.setAttribute('content', prevDesc || DEFAULT_DESC);
+      if (m) m.setAttribute('content', DEFAULT_DESC);
       const c = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
-      if (c) c.setAttribute('href', prevCanonical || `${SITE_URL}/`);
+      if (c) c.setAttribute('href', `${SITE_URL}/`);
     };
   }, [title, description, path]);
 }
