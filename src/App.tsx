@@ -7,6 +7,8 @@ import Training from './components/Training';
 import WhyUs from './components/WhyUs';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import { usePageSeo } from './hooks/usePageSeo';
+import { pageSeo } from './data/pageSeo';
 
 // Route-level code splitting: each page loads its JS only when visited.
 // This keeps the initial bundle small (better LCP / TBT / Speed Index).
@@ -16,6 +18,7 @@ const BlogPost = lazy(() => import('./components/BlogPost'));
 const Tools = lazy(() => import('./components/Tools'));
 const ToolPage = lazy(() => import('./components/ToolPage'));
 const InfoPage = lazy(() => import('./components/InfoPage'));
+const NotFound = lazy(() => import('./components/NotFound'));
 
 function PageLoader() {
   return (
@@ -26,6 +29,7 @@ function PageLoader() {
 }
 
 function HomePage() {
+  usePageSeo(pageSeo.home.title, pageSeo.home.description, '/');
   return (
     <>
       <Hero />
@@ -61,8 +65,9 @@ export default function App() {
               <Route path="/blog/:slug" element={<BlogPost />} />
               <Route path="/tools" element={<Tools />} />
               <Route path="/tools/:slug" element={<ToolPage />} />
-              {/* Trust pages: /about, /contact, /privacy, /terms — unknown slugs redirect home */}
+              {/* Trust pages: /about, /contact, /privacy, /terms — unknown slugs show the 404 page */}
               <Route path="/:slug" element={<InfoPage />} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </Suspense>
         </main>
