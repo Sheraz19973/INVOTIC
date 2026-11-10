@@ -1,0 +1,91 @@
+/* INVOTIC motion layer v1.0
+   Adds animation on top of the built site. Changes no colours, fonts or layout.
+   The INVOTIC logo in the menu is never touched.
+   To remove: delete the two invotic-motion lines from index.html. */
+
+@media (prefers-reduced-motion: no-preference) {
+
+  /* 01 — Hero headline: words rise in one after another */
+  #home h1 .im-w,
+  #home h1 > span.im-j {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(0.45em);
+    filter: blur(6px);
+    animation: im-rise 0.75s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+    animation-delay: calc(var(--i, 0) * 80ms + 200ms);
+    will-change: transform, opacity;
+  }
+
+  /* 04 — Monetization card: bar fills, then "Enabled" pops in */
+  #home .glass.w-56 .h-2 > div {
+    transform-origin: left center;
+    animation: im-fill 1.8s cubic-bezier(0.3, 0.7, 0.2, 1) 1s both;
+  }
+  #home .glass.w-56 .h-2 + span {
+    display: inline-block;
+    animation: im-pop 0.5s cubic-bezier(0.3, 1.5, 0.5, 1) 2.7s both;
+  }
+
+  /* 06 — Main hero button: red ring pulses outward */
+  #home a.bg-brand-red.bg-glow-red {
+    position: relative;
+  }
+  #home a.bg-brand-red.bg-glow-red::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    border: 2px solid #ff0000;
+    pointer-events: none;
+    opacity: 0;
+    animation: im-ring 2.4s ease-out 1.5s infinite;
+  }
+}
+
+/* 07 — Cards: red glow follows the cursor (mouse devices only) */
+@media (hover: hover) and (pointer: fine) {
+  .immersive-card {
+    position: relative;
+    overflow: hidden;
+  }
+  .immersive-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(
+      280px circle at var(--im-x, 50%) var(--im-y, 50%),
+      rgba(255, 0, 0, 0.16),
+      transparent 65%
+    );
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+  .immersive-card:hover::after {
+    opacity: 1;
+  }
+}
+
+/* 03 — Stat numbers keep a steady width while counting */
+#home p.im-count {
+  font-variant-numeric: tabular-nums;
+}
+
+@keyframes im-rise {
+  to { opacity: 1; transform: none; filter: blur(0); }
+}
+@keyframes im-fill {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+@keyframes im-pop {
+  from { opacity: 0; transform: translateY(6px) scale(0.9); }
+  to   { opacity: 1; transform: none; }
+}
+@keyframes im-ring {
+  0%   { opacity: 0.8; transform: scale(1); }
+  70%  { opacity: 0;   transform: scale(1.14, 1.5); }
+  100% { opacity: 0;   transform: scale(1.14, 1.5); }
+}
