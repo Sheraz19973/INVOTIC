@@ -3,13 +3,25 @@
   RewriteBase /
   RewriteCond %{HTTP_HOST} ^www\.invotic\.com$ [NC]
   RewriteRule ^(.*)$ https://invotic.com/$1 [R=301,L]
-  RewriteRule ^index\.html$ - [L]
-  # SPA fallback: every non-file request serves index.html, including paths
-  # that match a real asset directory (e.g. /blog/ -> public/blog/). Without
-  # this, /blog/ returned 403 and Googlebot could not index /blog.
+  RewriteRule ^(index|404)\.html$ - [L]
+
+  # One address per page: /blog/ -> /blog (canonical URLs have no trailing slash).
   RewriteCond %{REQUEST_FILENAME} !-f
-  RewriteRule . /index.html [L]
+  RewriteRule ^(.+)/$ /$1 [R=301,L]
+
+  # Each page has its own prerendered HTML (written at build time by vite.config.ts):
+  # /blog -> blog.html, /blog/<slug> -> blog/<slug>.html. This also covers paths that
+  # match a real asset directory (/blog -> public/blog/), which used to return 403.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+)$ /$1.html [L]
+
+  # Any other address that is not a real file is not a page: answer with a real 404.
+  # 404.html is the app shell, so visitors still see the INVOTIC "page not found" screen.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteRule . - [R=404,L]
 </IfModule>
+ErrorDocument 404 /404.html
 
 # Cache policy: HTML is never served stale; hashed assets cache long.
 <IfModule mod_expires.c>
@@ -25,8 +37,19 @@
   <FilesMatch "\.(js|css)$">
     Header set Cache-Control "public, max-age=31536000, immutable"
   </FilesMatch>
+  # The motion layer is not hashed: revalidate so updates show up (?v= also busts it)
+  <FilesMatch "^invotic-motion\.(js|css)$">
+    Header set Cache-Control "public, max-age=3600"
+  </FilesMatch>
   # Images, fonts, downloads: cache 30 days
   <FilesMatch "\.(jpg|jpeg|png|gif|webp|ico|svg|woff2?|ttf|eot|zip|b64|pdf)$">
     Header set Cache-Control "public, max-age=2592000"
   </FilesMatch>
+
+  # Security headers
+  Header always set Strict-Transport-Security "max-age=31536000"
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), geolocation=(), payment=()"
 </IfModule>
