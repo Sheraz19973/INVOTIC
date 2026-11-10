@@ -98,15 +98,42 @@ function prerenderHeads(): Plugin {
     configResolved(config) {
       outDir = path.resolve(config.root, config.build.outDir);
     },
-    closeBundle() {
+    async closeBundle() {
       const template = fs.readFileSync(path.join(outDir, 'index.html'), 'utf8');
+      if (!template.includes('<div id="root"></div>')) throw new Error('prerender: empty #root not found in index.html');
       const pages = prerenderPages();
-      for (const page of pages) {
-        const target = path.join(outDir, page.file);
-        fs.mkdirSync(path.dirname(target), {recursive: true});
-        fs.writeFileSync(target, renderHead(template, page));
+      // Render every page's real content (text, headings, links) into its HTML file, so search
+      // engines get the page without running JavaScript. The browser then hydrates it (main.tsx).
+      const {createServer} = await import('vite');
+      const server = await createServer({
+        configFile: false,
+        root: path.dirname(outDir),
+        plugins: [react()],
+        logLevel: 'error',
+        appType: 'custom',
+        server: {middlewareMode: true, hmr: false, watch: null},
+        resolve: {alias: {'@': path.dirname(outDir)}},
+      });
+      let rendered = 0;
+      try {
+        const {render} = (await server.ssrLoadModule('/src/entry-server.tsx')) as {render: (url: string) => Promise<string>};
+        const withBody = async (page: PrerenderPage, html: string) => {
+          const body = await render(page.path);
+          if (!body.includes('<h1')) throw new Error(`prerender: no <h1> rendered for ${page.path}`);
+          rendered++;
+          return html.replace('<div id="root"></div>', `<div id="root">${body}</div>`);
+        };
+        for (const page of pages) {
+          const target = path.join(outDir, page.file);
+          fs.mkdirSync(path.dirname(target), {recursive: true});
+          fs.writeFileSync(target, await withBody(page, renderHead(template, page)));
+        }
+        const home: PrerenderPage = {path: '/', file: 'index.html', ...pageSeo.home};
+        fs.writeFileSync(path.join(outDir, 'index.html'), await withBody(home, template));
+      } finally {
+        await server.close();
       }
-      console.log(`prerender: wrote ${pages.length} page heads`);
+      console.log(`prerender: wrote ${pages.length + 1} pages, ${rendered} with full content`);
     },
   };
 }
