@@ -7,6 +7,7 @@ import Training from './components/Training';
 import WhyUs from './components/WhyUs';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import ProductsShowcase from './components/ProductsShowcase';
 import { usePageSeo } from './hooks/usePageSeo';
 import { pageSeo } from './data/pageSeo';
 
@@ -19,6 +20,8 @@ const Tools = lazy(() => import('./components/Tools'));
 const ToolPage = lazy(() => import('./components/ToolPage'));
 const InfoPage = lazy(() => import('./components/InfoPage'));
 const NotFound = lazy(() => import('./components/NotFound'));
+const Products = lazy(() => import('./components/Products'));
+const ProductPage = lazy(() => import('./components/ProductPage'));
 
 function PageLoader() {
   return (
@@ -34,6 +37,7 @@ function HomePage() {
     <>
       <Hero />
       <Services />
+      <ProductsShowcase />
       <Training />
       <WhyUs />
       <Contact />
@@ -83,6 +87,8 @@ export function AppShell() {
               <Route path="/blog/:slug" element={<BlogPost />} />
               <Route path="/tools" element={<Tools />} />
               <Route path="/tools/:slug" element={<ToolPage />} />
+              <Route path="/products" element={<Products />} />
+              <Route path="/products/:slug" element={<ProductPage />} />
               {/* Trust pages: /about, /contact, /privacy, /terms — unknown slugs show the 404 page */}
               <Route path="/:slug" element={<InfoPage />} />
               <Route path="*" element={<NotFound />} />
