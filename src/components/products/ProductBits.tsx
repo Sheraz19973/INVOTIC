@@ -1,6 +1,5 @@
 import type { ReactNode } from 'react';
 import { Link } from 'react-router-dom';
-import { Wand2 } from 'lucide-react';
 import { isExternal, type Product, type ProductImage } from '../../data/products';
 
 /** A link that stays inside the app for "/…" paths and opens other sites in a new tab. */
@@ -67,6 +66,8 @@ export function Shot({ image, sizes, eager = false, className = '' }: { image: P
 
 /** Product picture inside a dark app-window frame; a drawn stand-in for products without a screenshot yet. */
 export function ProductVisual({ product, sizes, eager = false }: { product: Product; sizes: string; eager?: boolean }) {
+  const ph = product.placeholder;
+  const Icon = ph?.icon;
   return (
     <div className="rounded-xl overflow-hidden border border-white/10 bg-[#0b0b0e]">
       <div className="flex items-center gap-1.5 px-3 py-2 border-b border-white/5" aria-hidden="true">
@@ -80,9 +81,9 @@ export function ProductVisual({ product, sizes, eager = false }: { product: Prod
       ) : (
         <div className="aspect-[16/10] grid place-items-center bg-[radial-gradient(circle_at_30%_30%,rgba(0,242,255,0.12),transparent_60%),radial-gradient(circle_at_75%_70%,rgba(255,0,0,0.12),transparent_55%)]">
           <div className="text-center px-6">
-            <Wand2 size={34} className="mx-auto text-brand-cyan mb-3" aria-hidden="true" />
-            <p className="font-display font-bold text-lg">⚡ Auto Edit</p>
-            <p className="text-xs text-gray-500 mt-1">Screenshots coming with the release</p>
+            {Icon && <Icon size={34} className="mx-auto text-brand-cyan mb-3" aria-hidden="true" />}
+            <p className="font-display font-bold text-lg">{ph?.title ?? product.name}</p>
+            {ph && <p className="text-xs text-gray-500 mt-1">{ph.text}</p>}
           </div>
         </div>
       )}
