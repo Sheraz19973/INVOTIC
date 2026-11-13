@@ -18,6 +18,7 @@ export default function Footer() {
           <a href="/contact" className="inline-block py-2 hover:text-white transition-colors">Contact</a>
           <a href="/admission" className="inline-block py-2 hover:text-white transition-colors">Admission</a>
           <a href="/blog" className="inline-block py-2 hover:text-white transition-colors">Blog</a>
+          <a href="/products" className="inline-block py-2 hover:text-white transition-colors">Products</a>
           <a href="/tools" className="inline-block py-2 hover:text-white transition-colors">Tools</a>
           <a href="/privacy" className="inline-block py-2 hover:text-white transition-colors">Privacy</a>
           <a href="/terms" className="inline-block py-2 hover:text-white transition-colors">Terms</a>

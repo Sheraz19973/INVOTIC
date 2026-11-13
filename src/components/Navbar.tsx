@@ -41,37 +41,46 @@ export default function Navbar() {
         </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden lg:flex items-center gap-5 xl:gap-6">
           {navLinks.map((link) => (
             <a
               key={link.name}
               href={isSubPage ? `/${link.href}` : link.href}
-              className="text-sm font-medium text-gray-400 hover:text-white transition-colors tracking-wide uppercase"
+              className={`text-sm font-medium text-gray-400 hover:text-white transition-colors tracking-wide uppercase whitespace-nowrap ${
+                link.name === 'Why Us' || link.name === 'Contact' ? 'hidden xl:inline' : ''
+              }`}
             >
               {link.name}
             </a>
           ))}
           <Link
             to="/admission"
-            className="text-sm font-bold text-brand-cyan hover:text-white transition-colors tracking-wide uppercase"
+            className="text-sm font-bold text-brand-cyan hover:text-white transition-colors tracking-wide uppercase whitespace-nowrap"
           >
             Admission
           </Link>
           <Link
             to="/blog"
-            className="text-sm font-medium text-gray-400 hover:text-white transition-colors tracking-wide uppercase"
+            className="text-sm font-medium text-gray-400 hover:text-white transition-colors tracking-wide uppercase whitespace-nowrap"
           >
             Blog
           </Link>
           <Link
+            to="/products"
+            className="relative text-sm font-medium text-white hover:text-brand-cyan transition-colors tracking-wide uppercase whitespace-nowrap"
+          >
+            Products
+            <span className="absolute -top-3 -right-5 bg-brand-cyan text-black text-[8px] font-mono font-bold px-1 py-0.5 rounded">NEW</span>
+          </Link>
+          <Link
             to="/tools"
-            className="text-sm font-medium text-gray-400 hover:text-white transition-colors tracking-wide uppercase"
+            className="text-sm font-medium text-gray-400 hover:text-white transition-colors tracking-wide uppercase whitespace-nowrap"
           >
             Tools
           </Link>
           <a
             href={isSubPage ? "/#contact" : "#contact"}
-            className="bg-brand-red hover:bg-red-600 text-white px-8 py-3 rounded-md text-sm font-semibold transition-all hover:scale-105 bg-glow-red flex items-center gap-2"
+            className="bg-brand-red hover:bg-red-600 text-white px-6 xl:px-8 py-3 rounded-md text-sm font-semibold transition-all hover:scale-105 bg-glow-red flex items-center gap-2 whitespace-nowrap"
           >
             Get Started
             <ArrowRight size={16} />
@@ -80,7 +89,7 @@ export default function Navbar() {
 
         {/* Mobile Toggle */}
         <button
-          className="md:hidden text-white p-2"
+          className="lg:hidden text-white p-2"
           onClick={() => setIsOpen(true)}
           aria-label="Open menu"
           aria-expanded={isOpen}
@@ -98,14 +107,14 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setIsOpen(false)}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 md:hidden"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-50 lg:hidden"
             />
             <motion.div
               initial={{ x: '100%' }}
               animate={{ x: 0 }}
               exit={{ x: '100%' }}
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-              className="fixed top-0 right-0 bottom-0 w-80 bg-brand-navy border-l border-white/10 z-50 md:hidden p-8 flex flex-col"
+              className="fixed top-0 right-0 bottom-0 w-80 bg-brand-navy border-l border-white/10 z-50 lg:hidden p-8 flex flex-col"
             >
               <div className="flex justify-end mb-8">
                 <button onClick={() => setIsOpen(false)} aria-label="Close menu" className="text-white p-2 hover:bg-white/5 rounded-full">
@@ -136,6 +145,13 @@ export default function Navbar() {
                   className="text-2xl font-display font-bold text-gray-300 hover:text-brand-red transition-colors"
                 >
                   Blog
+                </Link>
+                <Link
+                  to="/products"
+                  onClick={() => setIsOpen(false)}
+                  className="text-2xl font-display font-bold text-gray-300 hover:text-brand-red transition-colors"
+                >
+                  Products <span className="align-middle ml-1 bg-brand-cyan text-black text-[10px] font-mono font-bold px-1.5 py-0.5 rounded">NEW</span>
                 </Link>
                 <Link
                   to="/tools"
