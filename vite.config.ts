@@ -7,6 +7,7 @@ import {posts} from './src/data/blog';
 import {infoPages} from './src/data/infoPages';
 import {tools} from './src/data/tools';
 import {pageSeo} from './src/data/pageSeo';
+import {products} from './src/data/products';
 
 const SITE_URL = 'https://invotic.com';
 
@@ -20,6 +21,10 @@ interface PrerenderPage {
   type?: 'website' | 'article';
   published?: string;
   noindex?: boolean;
+  /** Absolute preview image for WhatsApp/Facebook/X (defaults to the founder photo). */
+  image?: string;
+  /** Structured data added to the head as JSON-LD. */
+  jsonLd?: Record<string, unknown>;
 }
 
 function escapeAttr(value: string): string {
@@ -31,6 +36,7 @@ function prerenderPages(): PrerenderPage[] {
     {path: '/blog', file: 'blog.html', ...pageSeo.blog},
     {path: '/admission', file: 'admission.html', ...pageSeo.admission},
     {path: '/tools', file: 'tools.html', ...pageSeo.tools},
+    {path: '/products', file: 'products.html', ...pageSeo.products},
     {path: '/404', file: '404.html', ...pageSeo.notFound, noindex: true},
   ];
   for (const p of infoPages) {
@@ -38,6 +44,30 @@ function prerenderPages(): PrerenderPage[] {
   }
   for (const t of tools) {
     pages.push({path: `/tools/${t.slug}`, file: `tools/${t.slug}.html`, title: t.seoTitle, description: t.seoDescription});
+  }
+  for (const p of products) {
+    const d = p.detail;
+    if (!d) continue;
+    const url = `${SITE_URL}/products/${p.slug}`;
+    pages.push({
+      path: `/products/${p.slug}`,
+      file: `products/${p.slug}.html`,
+      title: d.seoTitle,
+      description: d.seoDescription,
+      image: p.ogImage ? SITE_URL + p.ogImage : undefined,
+      jsonLd: {
+        '@context': 'https://schema.org',
+        '@type': 'SoftwareApplication',
+        name: p.name,
+        url,
+        description: d.seoDescription,
+        applicationCategory: d.category,
+        operatingSystem: 'Windows 10, Windows 11',
+        offers: {'@type': 'Offer', price: d.price, priceCurrency: 'USD'},
+        publisher: {'@type': 'Organization', name: 'INVOTIC', url: SITE_URL},
+        ...(p.image ? {screenshot: SITE_URL + p.image.src} : {}),
+      },
+    });
   }
   for (const post of posts) {
     pages.push({
@@ -80,6 +110,12 @@ function renderHead(template: string, page: PrerenderPage): string {
     extra.push('<meta name="robots" content="noindex" />');
   }
   if (page.published) extra.push(`<meta property="article:published_time" content="${page.published}" />`);
+  if (page.image) {
+    html = html
+      .replace(/<meta property="og:image" content="[^"]*" \/>/, `<meta property="og:image" content="${page.image}" />`)
+      .replace(/<meta name="twitter:image" content="[^"]*" \/>/, `<meta name="twitter:image" content="${page.image}" />`);
+  }
+  if (page.jsonLd) extra.push(`<script type="application/ld+json">${JSON.stringify(page.jsonLd).replace(/</g, '\\u003c')}</script>`);
   if (extra.length) html = html.replace('</head>', `    ${extra.join('\n    ')}\n  </head>`);
   return html;
 }
