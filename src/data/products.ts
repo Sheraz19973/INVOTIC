@@ -16,6 +16,9 @@ import {
   CalendarDays,
   BadgeCheck,
   BellRing,
+  Wand2,
+  MessagesSquare,
+  Clapperboard,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -84,6 +87,8 @@ export interface Product {
   tags: ProductTag[];
   facts: string[];
   image?: ProductImage;
+  /** Drawn stand-in shown until a product has a screenshot (coming-soon products). */
+  placeholder?: { icon: LucideIcon; title: string; text: string };
   /** 1200x630 JPG for link previews (WhatsApp, Facebook, X). */
   ogImage?: string;
   primary: ProductLink;
@@ -321,9 +326,42 @@ export const products: Product[] = [
     platforms: ['Windows'],
     tags: ['windows'],
     facts: ['Auto Edit', 'Captions', 'Works offline'],
+    placeholder: { icon: Wand2, title: '⚡ Auto Edit', text: 'Screenshots coming with the release' },
     primary: {
       label: 'Tell me when it’s out',
       href: `${SALES_WHATSAPP}?text=${encodeURIComponent('Hi INVOTIC! Please tell me when Invo Edit is available.')}`,
+    },
+  },
+  {
+    slug: 'muse-hub',
+    name: 'Invotic Muse Hub',
+    tagline: 'One group chat for all your Muse AI agents',
+    description:
+      'Run many Muse accounts from one place. Type @agent and your message, the extension types it into that agent’s chat, and the reply comes back to the Hub. Works across laptops.',
+    price: 'soon',
+    platforms: ['Chrome'],
+    tags: ['chrome'],
+    facts: ['@agent messages', 'Agent status', 'Multi-laptop'],
+    placeholder: { icon: MessagesSquare, title: '@agent group chat', text: 'Screenshots coming with the release' },
+    primary: {
+      label: 'Tell me when it’s out',
+      href: `${SALES_WHATSAPP}?text=${encodeURIComponent('Hi INVOTIC! Please tell me when Invotic Muse Hub is available.')}`,
+    },
+  },
+  {
+    slug: 'html-studio',
+    name: 'INVOTIC HTML Studio',
+    tagline: 'Turn HTML pages into 4K videos',
+    description:
+      'Drop an HTML file in and get a finished MP4: 4K, music, sound effects and AI voice-over. Renders videos of any length and picks up where it stopped.',
+    price: 'soon',
+    platforms: ['Windows'],
+    tags: ['windows'],
+    facts: ['HTML to MP4', '4K', 'AI voice-over'],
+    placeholder: { icon: Clapperboard, title: 'HTML → 4K MP4', text: 'Screenshots coming with the release' },
+    primary: {
+      label: 'Tell me when it’s out',
+      href: `${SALES_WHATSAPP}?text=${encodeURIComponent('Hi INVOTIC! Please tell me when INVOTIC HTML Studio is available.')}`,
     },
   },
 ];
