@@ -28,6 +28,11 @@ export const pageSeo = {
     description:
       'Free tools for YouTube creators: revenue calculator, monetization tracker, CPM by niche explorer, and a video title generator.',
   },
+  products: {
+    title: 'INVOTIC Software — AI Dubbing, TikTok Agency Panel & Free Creator Tools',
+    description:
+      'Software by INVOTIC: InvoDub AI video dubbing, the free InvoPost TikTok agency panel, Speak & Translate and more. Start free, pay only for what you keep using.',
+  },
   notFound: {
     title: 'Page Not Found | INVOTIC',
     description:
