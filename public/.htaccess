@@ -5,6 +5,9 @@
   RewriteRule ^(.*)$ https://invotic.com/$1 [R=301,L]
   RewriteRule ^(index|404)\.html$ - [L]
 
+  # Old course admission page (training is not offered now): send visitors home.
+  RewriteRule ^admission(\.html)?/?$ https://invotic.com/ [R=301,L]
+
   # One address per page: /blog/ -> /blog (canonical URLs have no trailing slash).
   RewriteCond %{REQUEST_FILENAME} !-f
   RewriteRule ^(.+)/$ /$1 [R=301,L]
