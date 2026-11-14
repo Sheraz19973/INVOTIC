@@ -12,7 +12,6 @@ import { pageSeo } from './data/pageSeo';
 
 // Route-level code splitting: each page loads its JS only when visited.
 // This keeps the initial bundle small (better LCP / TBT / Speed Index).
-const AdmissionForm = lazy(() => import('./components/AdmissionForm'));
 const Blog = lazy(() => import('./components/Blog'));
 const BlogPost = lazy(() => import('./components/BlogPost'));
 const Tools = lazy(() => import('./components/Tools'));
@@ -80,7 +79,6 @@ export function AppShell() {
           <Suspense fallback={<PageLoader />}>
             <Routes>
               <Route path="/" element={<HomePage />} />
-              <Route path="/admission" element={<AdmissionForm />} />
               <Route path="/blog" element={<Blog />} />
               <Route path="/blog/:slug" element={<BlogPost />} />
               <Route path="/tools" element={<Tools />} />
