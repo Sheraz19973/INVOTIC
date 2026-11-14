@@ -98,7 +98,7 @@ export interface Product {
   detail?: ProductDetail;
 }
 
-const SALES_WHATSAPP = 'https://wa.me/923189177512';
+const SALES_WHATSAPP = 'https://wa.me/923484166937';
 
 export const products: Product[] = [
   {
