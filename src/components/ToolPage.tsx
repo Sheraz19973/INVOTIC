@@ -111,12 +111,12 @@ export default function ToolPage() {
             Want help growing faster than a calculator can?
           </h2>
           <p className="text-gray-400 mb-6 max-w-xl mx-auto">
-            These tools show you the numbers — our training shows you how to
-            move them. Chat with us about YouTube automation training.
+            These tools show you the numbers — our team helps you move them.
+            Chat with us about growing and monetizing your channel.
           </p>
           <a
             href={`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(
-              `Hi INVOTIC! I was using your ${tool.name} and want to learn more about YouTube automation training.`
+              `Hi INVOTIC! I was using your ${tool.name} and want help growing my YouTube channel.`
             )}`}
             target="_blank"
             rel="noopener noreferrer"

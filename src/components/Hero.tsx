@@ -62,7 +62,7 @@ export default function Hero() {
             <motion.a
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              href="#training"
+              href="#contact"
               className="bg-brand-red hover:bg-red-600 text-white px-8 py-3 rounded-md font-bold text-[0.85rem] transition-all bg-glow-red flex items-center gap-2"
             >
               Get My Channel Monetized
