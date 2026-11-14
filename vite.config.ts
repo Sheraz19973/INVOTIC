@@ -34,7 +34,6 @@ function escapeAttr(value: string): string {
 function prerenderPages(): PrerenderPage[] {
   const pages: PrerenderPage[] = [
     {path: '/blog', file: 'blog.html', ...pageSeo.blog},
-    {path: '/admission', file: 'admission.html', ...pageSeo.admission},
     {path: '/tools', file: 'tools.html', ...pageSeo.tools},
     {path: '/products', file: 'products.html', ...pageSeo.products},
     {path: '/404', file: '404.html', ...pageSeo.notFound, noindex: true},
