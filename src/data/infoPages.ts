@@ -12,9 +12,9 @@ export const infoPages: InfoPageMeta[] = [
   {
     slug: 'contact',
     title: 'Contact',
-    seoTitle: 'Contact INVOTIC | YouTube Automation Training',
+    seoTitle: 'Contact INVOTIC | YouTube Automation Agency',
     seoDescription:
-      'Get in touch with INVOTIC — admissions, training enquiries, and support for our free YouTube creator tools.',
+      'Get in touch with INVOTIC — channel help, questions about our software, and support for our free YouTube creator tools.',
     updated: '2026-10-03',
     intro: '',
     sections: [],
@@ -22,17 +22,18 @@ export const infoPages: InfoPageMeta[] = [
   {
     slug: 'about',
     title: 'About INVOTIC',
-    seoTitle: 'About INVOTIC | YouTube Automation Training by Sheraz Khan',
+    seoTitle: 'About INVOTIC | YouTube Automation Agency by Sheraz Khan',
     seoDescription:
-      'INVOTIC helps YouTube creators learn automation — from starting a faceless channel to growing and monetizing it. Founded by Sheraz Khan.',
+      'INVOTIC helps YouTube creators grow and monetize their channels — agency services, AI software and free creator tools. Founded by Sheraz Khan.',
     updated: '2026-10-03',
     intro:
-      'INVOTIC is a YouTube automation training brand founded by Sheraz Khan. We help creators start, grow, and monetize YouTube channels — including faceless channels — through practical training and free tools built for creators.',
+      'INVOTIC is a YouTube automation agency founded by Sheraz Khan. We help creators start, grow, and monetize YouTube channels — including faceless channels — with hands-on agency work, our own AI software and free tools built for creators.',
     sections: [
       {
         heading: 'What we do',
         body: [
-          'YouTube automation training: step-by-step programs that take you from channel setup to content systems, growth, and monetization.',
+          'YouTube automation agency: we fix monetization and policy problems and set up content systems that keep a channel growing.',
+          'Software: AI tools we built and use ourselves, like InvoDub for video dubbing and InvoPost for TikTok agencies.',
           'Free creator tools: calculators, generators, and utilities (like our YouTube revenue calculator and the Speak & Translate extension) that solve real creator problems at no cost.',
           'Practical guidance: no hype, no shortcuts — just the workflows that actually work for building a channel as a system.',
         ],
@@ -49,7 +50,7 @@ export const infoPages: InfoPageMeta[] = [
         heading: 'Contact',
         body: [
           'Email: info@invotic.com',
-          'For admissions and training enquiries, use the contact form on the homepage or the admission page.',
+          'For channel help or questions about our software, use the contact form on the homepage or message us on WhatsApp.',
         ],
       },
     ],
@@ -75,7 +76,7 @@ export const infoPages: InfoPageMeta[] = [
       {
         heading: 'How we use it',
         body: [
-          'To respond to your enquiries and provide the training or tools you asked about.',
+          'To respond to your enquiries and provide the services or tools you asked about.',
           'To keep the site secure and working properly.',
           'We do not sell your personal information to anyone.',
         ],
@@ -105,7 +106,7 @@ export const infoPages: InfoPageMeta[] = [
     title: 'Terms of Use',
     seoTitle: 'Terms of Use | INVOTIC',
     seoDescription:
-      'The terms for using invotic.com, our free tools, and training content.',
+      'The terms for using invotic.com, our free tools and our software.',
     updated: '2026-10-03',
     intro:
       'This is a starter terms page for invotic.com. By using this site and our free tools, you agree to the terms below. It will be reviewed and finalized by the site owner.',
@@ -118,12 +119,6 @@ export const infoPages: InfoPageMeta[] = [
         ],
       },
       {
-        heading: 'Training content',
-        body: [
-          'Training programs teach methods and workflows. We describe what has worked in practice, but we cannot guarantee specific income, views, or channel growth — results depend on effort, niche, and factors outside our control.',
-        ],
-      },
-      {
         heading: 'Intellectual property',
         body: [
           'Site content, branding, and tool code belong to INVOTIC unless stated otherwise. You may share links to our pages; you may not copy substantial content or pass our tools off as your own.',
@@ -132,7 +127,7 @@ export const infoPages: InfoPageMeta[] = [
       {
         heading: 'Liability',
         body: [
-          'To the maximum extent permitted by law, INVOTIC is not liable for losses arising from use of the site, tools, or training content.',
+          'To the maximum extent permitted by law, INVOTIC is not liable for losses arising from use of the site, tools, or software.',
         ],
       },
       {

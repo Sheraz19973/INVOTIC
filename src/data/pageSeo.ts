@@ -9,7 +9,7 @@ export interface PageSeo {
 
 export const pageSeo = {
   home: {
-    title: 'INVOTIC | YouTube Automation Training by Sheraz Khan',
+    title: 'INVOTIC | YouTube Automation Agency by Sheraz Khan',
     description:
       'INVOTIC is a YouTube automation agency by Sheraz Khan: channel monetization, policy fixes and full automation, plus AI software and free creator tools.',
   },
@@ -17,11 +17,6 @@ export const pageSeo = {
     title: 'YouTube Automation Blog — Guides, AI Tools & News | INVOTIC',
     description:
       'Practical guides on YouTube automation, faceless channels, monetization and the AI tools creators use — from 10+ years of running channels.',
-  },
-  admission: {
-    title: 'YouTube Automation Course Admission | INVOTIC',
-    description:
-      'Apply for the INVOTIC YouTube automation course with Sheraz Khan. Fill out the admission form, get reviewed, and join the free or paid training.',
   },
   tools: {
     title: 'Free YouTube Tools — Calculators & Generators | INVOTIC',
@@ -36,6 +31,6 @@ export const pageSeo = {
   notFound: {
     title: 'Page Not Found | INVOTIC',
     description:
-      'This page does not exist. Go back to INVOTIC for YouTube automation training, free creator tools and the blog.',
+      'This page does not exist. Go back to INVOTIC for YouTube automation services, software, free creator tools and the blog.',
   },
 } satisfies Record<string, PageSeo>;
