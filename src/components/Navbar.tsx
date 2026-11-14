@@ -53,12 +53,6 @@ export default function Navbar() {
             </a>
           ))}
           <Link
-            to="/admission"
-            className="text-sm font-bold text-brand-cyan hover:text-white transition-colors tracking-wide uppercase whitespace-nowrap"
-          >
-            Admission
-          </Link>
-          <Link
             to="/blog"
             className="text-sm font-medium text-gray-400 hover:text-white transition-colors tracking-wide uppercase whitespace-nowrap"
           >
@@ -131,13 +125,6 @@ export default function Navbar() {
                     {link.name}
                   </a>
                 ))}
-                <Link
-                  to="/admission"
-                  onClick={() => setIsOpen(false)}
-                  className="text-2xl font-display font-bold text-brand-cyan hover:text-white transition-colors"
-                >
-                  Admission
-                </Link>
                 <Link
                   to="/blog"
                   onClick={() => setIsOpen(false)}

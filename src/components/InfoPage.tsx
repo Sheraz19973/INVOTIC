@@ -12,7 +12,7 @@ export default function InfoPage() {
 
   usePageSeo(
     page ? page.seoTitle : 'INVOTIC',
-    page ? page.seoDescription : 'INVOTIC — YouTube automation training and free creator tools.',
+    page ? page.seoDescription : 'INVOTIC — YouTube automation agency, AI software and free creator tools.',
     `/${slug ?? ''}`
   );
 

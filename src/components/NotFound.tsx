@@ -21,7 +21,6 @@ export default function NotFound() {
     { to: '/', label: 'Home' },
     { to: '/blog', label: 'Blog' },
     { to: '/tools', label: 'Free Tools' },
-    { to: '/admission', label: 'Admission' },
   ];
 
   return (

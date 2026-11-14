@@ -20,7 +20,7 @@ import NotFound from './NotFound';
 
 const whatsappNumber = '923484166937';
 const SITE_URL = 'https://invotic.com';
-const DEFAULT_TITLE = 'INVOTIC | YouTube Automation Training by Sheraz Khan';
+const DEFAULT_TITLE = 'INVOTIC | YouTube Automation Agency by Sheraz Khan';
 const DEFAULT_DESC =
   'INVOTIC is a YouTube automation agency by Sheraz Khan: channel monetization, policy fixes and full automation, plus AI software and free creator tools.';
 
