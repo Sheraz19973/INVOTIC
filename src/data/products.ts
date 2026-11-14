@@ -317,6 +317,28 @@ export const products: Product[] = [
     page: '/tools/amazon-video-downloader',
   },
   {
+    slug: 'invograb',
+    name: 'InvoGrab',
+    tagline: 'Download every image from any link',
+    description:
+      'Paste as many links as you like. InvoGrab finds every image, lets you rename them, and saves them as JPG, PNG or WEBP into your folder or a ZIP.',
+    price: 'soon',
+    platforms: ['Windows'],
+    tags: ['windows'],
+    facts: ['Bulk links', 'Rename and convert', 'Folder or ZIP'],
+    image: {
+      src: '/products/invograb-app-1280.webp',
+      srcSet: '/products/invograb-app-720.webp 720w, /products/invograb-app-1280.webp 1280w',
+      width: 1280,
+      height: 800,
+      alt: 'InvoGrab app: scanned links with their status and a grid of found images with a name under each',
+    },
+    primary: {
+      label: 'Tell me when it’s out',
+      href: `${SALES_WHATSAPP}?text=${encodeURIComponent('Hi INVOTIC! Please tell me when InvoGrab is available.')}`,
+    },
+  },
+  {
     slug: 'invo-edit',
     name: 'Invo Edit',
     tagline: 'Automatic video editor',
