@@ -338,12 +338,11 @@ export const products: Product[] = [
       height: 800,
       alt: 'InvoMirror app: two connected phones with battery, heat and storage, plus buttons to control all phones at once',
     },
-    primary: { label: 'Download free trial', href: 'https://invomirror.invotic.com/download.php' },
+    primary: { label: 'Download free trial', href: 'https://invomirror.invotic.com/' },
     secondary: {
       label: 'WhatsApp',
       href: `${SALES_WHATSAPP}?text=${encodeURIComponent('Hi INVOTIC! I want to buy InvoMirror (or I have a question about it).')}`,
     },
-    learnMore: 'https://invomirror.invotic.com/',
   },
   {
     slug: 'invograb',
