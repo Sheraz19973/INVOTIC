@@ -19,7 +19,6 @@ import {
   Wand2,
   MessagesSquare,
   Clapperboard,
-  Smartphone,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -351,7 +350,13 @@ export const products: Product[] = [
     platforms: ['Windows'],
     tags: ['windows'],
     facts: ['Sync all phones', 'Drag & drop 4K videos', 'Upload queue', 'Phone health alerts', 'Any Android 5.0+', 'No logins on the PC'],
-    placeholder: { icon: Smartphone, title: 'All your phones, one window', text: 'Free 3-day trial with 2 phones when it launches' },
+    image: {
+      src: '/products/invomirror-app-1280.webp',
+      srcSet: '/products/invomirror-app-720.webp 720w, /products/invomirror-app-1280.webp 1280w',
+      width: 1280,
+      height: 800,
+      alt: 'InvoMirror app: two connected phones with battery, heat and storage, plus buttons to control all phones at once',
+    },
     primary: { label: 'Learn more', href: 'https://invomirror.invotic.com/' },
     secondary: {
       label: 'WhatsApp',
