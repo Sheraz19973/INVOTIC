@@ -94,6 +94,8 @@ export interface Product {
   primary: ProductLink;
   /** Optional second, smaller button on the card (e.g. WhatsApp). */
   secondary?: ProductLink;
+  /** Product's own website, shown as a small "Learn more" link on the card. */
+  learnMore?: string;
   /** Internal page (product page or tool page) for "Learn more". */
   page?: string;
   featured?: boolean;
@@ -319,6 +321,31 @@ export const products: Product[] = [
     page: '/tools/amazon-video-downloader',
   },
   {
+    slug: 'invomirror',
+    name: 'InvoMirror',
+    tagline: 'Control all your Android phones from one laptop window',
+    description:
+      'Plug phones in with a USB cable and they show up live in one Windows app. Sync all phones at a human pace, type with your PC keyboard, paste Urdu or emoji to one or all phones, and drag 4K videos straight onto them. Free 3-day trial with 2 phones, then $5/month for unlimited phones.',
+    price: 'paid',
+    trial: '3-day free trial',
+    platforms: ['Windows'],
+    tags: ['paid', 'windows'],
+    facts: ['Sync all phones', 'PC keyboard typing', 'Paste Urdu or emoji', 'Drag & drop 4K videos', 'Upload queue', 'Phone health alerts', 'Android 5.0+', 'No login on the PC'],
+    image: {
+      src: '/products/invomirror-app-1280.webp',
+      srcSet: '/products/invomirror-app-720.webp 720w, /products/invomirror-app-1280.webp 1280w',
+      width: 1280,
+      height: 800,
+      alt: 'InvoMirror app: two connected phones with battery, heat and storage, plus buttons to control all phones at once',
+    },
+    primary: { label: 'Download free trial', href: 'https://invomirror.invotic.com/download.php' },
+    secondary: {
+      label: 'WhatsApp',
+      href: `${SALES_WHATSAPP}?text=${encodeURIComponent('Hi INVOTIC! I want to buy InvoMirror (or I have a question about it).')}`,
+    },
+    learnMore: 'https://invomirror.invotic.com/',
+  },
+  {
     slug: 'invograb',
     name: 'InvoGrab',
     tagline: 'Download every image from any link',
@@ -338,29 +365,6 @@ export const products: Product[] = [
     primary: {
       label: 'Tell me when it’s out',
       href: `${SALES_WHATSAPP}?text=${encodeURIComponent('Hi INVOTIC! Please tell me when InvoGrab is available.')}`,
-    },
-  },
-  {
-    slug: 'invomirror',
-    name: 'InvoMirror',
-    tagline: 'Control all your Android phones from one laptop window',
-    description:
-      'Plug phones in with a USB cable and they show up live in one Windows app. Control them with mouse and keyboard, Sync all to make every phone follow at a human pace, and drag 4K videos straight onto phones.',
-    price: 'soon',
-    platforms: ['Windows'],
-    tags: ['windows'],
-    facts: ['Sync all phones', 'Drag & drop 4K videos', 'Upload queue', 'Phone health alerts', 'Any Android 5.0+', 'No logins on the PC'],
-    image: {
-      src: '/products/invomirror-app-1280.webp',
-      srcSet: '/products/invomirror-app-720.webp 720w, /products/invomirror-app-1280.webp 1280w',
-      width: 1280,
-      height: 800,
-      alt: 'InvoMirror app: two connected phones with battery, heat and storage, plus buttons to control all phones at once',
-    },
-    primary: { label: 'Learn more', href: 'https://invomirror.invotic.com/' },
-    secondary: {
-      label: 'WhatsApp',
-      href: `${SALES_WHATSAPP}?text=${encodeURIComponent('Hi INVOTIC! Please tell me when InvoMirror is available.')}`,
     },
   },
   {
