@@ -19,6 +19,7 @@ import {
   Wand2,
   MessagesSquare,
   Clapperboard,
+  Smartphone,
   type LucideIcon,
 } from 'lucide-react';
 
@@ -92,6 +93,8 @@ export interface Product {
   /** 1200x630 JPG for link previews (WhatsApp, Facebook, X). */
   ogImage?: string;
   primary: ProductLink;
+  /** Optional second, smaller button on the card (e.g. WhatsApp). */
+  secondary?: ProductLink;
   /** Internal page (product page or tool page) for "Learn more". */
   page?: string;
   featured?: boolean;
@@ -336,6 +339,23 @@ export const products: Product[] = [
     primary: {
       label: 'Tell me when it’s out',
       href: `${SALES_WHATSAPP}?text=${encodeURIComponent('Hi INVOTIC! Please tell me when InvoGrab is available.')}`,
+    },
+  },
+  {
+    slug: 'invomirror',
+    name: 'InvoMirror',
+    tagline: 'Control all your Android phones from one laptop window',
+    description:
+      'Plug phones in with a USB cable and they show up live in one Windows app. Control them with mouse and keyboard, Sync all to make every phone follow at a human pace, and drag 4K videos straight onto phones.',
+    price: 'soon',
+    platforms: ['Windows'],
+    tags: ['windows'],
+    facts: ['Sync all phones', 'Drag & drop 4K videos', 'Upload queue', 'Phone health alerts', 'Any Android 5.0+', 'No logins on the PC'],
+    placeholder: { icon: Smartphone, title: 'All your phones, one window', text: 'Free 3-day trial with 2 phones when it launches' },
+    primary: { label: 'Learn more', href: 'https://invomirror.invotic.com/' },
+    secondary: {
+      label: 'WhatsApp',
+      href: `${SALES_WHATSAPP}?text=${encodeURIComponent('Hi INVOTIC! Please tell me when InvoMirror is available.')}`,
     },
   },
   {
