@@ -72,6 +72,14 @@ export default function Products() {
                 >
                   {p.page ? `View ${p.name}` : p.primary.label} <ArrowRight size={15} />
                 </SmartLink>
+                {p.secondary && (
+                  <SmartLink
+                    href={p.secondary.href}
+                    className="inline-flex items-center gap-2 px-4 py-2.5 rounded-md font-bold text-sm text-[#25D366] border border-[#25D366]/30 hover:border-[#25D366]/70 transition-all"
+                  >
+                    <MessageCircle size={15} /> {p.secondary.label}
+                  </SmartLink>
+                )}
                 <ByInvotic name={p.name} />
               </div>
             </article>
