@@ -23,6 +23,7 @@ export default function Footer() {
           <a href="/terms" className="inline-block py-2 hover:text-white transition-colors">Terms</a>
           <a href="https://invodub.invotic.com/" title="InvoDub – AI video dubbing software" className="inline-block py-2 hover:text-white transition-colors">InvoDub</a>
           <a href="https://invopost.invotic.com/" title="InvoPost – free TikTok agency panel" className="inline-block py-2 hover:text-white transition-colors">InvoPost</a>
+          <a href="https://invomirror.invotic.com/" title="InvoMirror – control all your Android phones from one laptop" className="inline-block py-2 hover:text-white transition-colors">InvoMirror</a>
         </div>
       </div>
     </footer>

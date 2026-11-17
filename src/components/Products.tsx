@@ -80,6 +80,11 @@ export default function Products() {
                     <MessageCircle size={15} /> {p.secondary.label}
                   </SmartLink>
                 )}
+                {p.learnMore && (
+                  <SmartLink href={p.learnMore} className="inline-flex items-center gap-1 text-sm font-semibold text-gray-300 hover:text-white transition-colors">
+                    Learn more <ArrowRight size={14} />
+                  </SmartLink>
+                )}
                 <ByInvotic name={p.name} />
               </div>
             </article>
